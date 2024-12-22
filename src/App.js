@@ -8,8 +8,8 @@ import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
 import { getMyAuth } from './utils/helpers';
 
 const App = () => {
-  // const { isAuthenticated } = useKindeAuth();
-  const isAuthenticated = getMyAuth();
+  const { isAuthenticated } = useKindeAuth();
+  // const isAuthenticated = getMyAuth();
 
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
 
