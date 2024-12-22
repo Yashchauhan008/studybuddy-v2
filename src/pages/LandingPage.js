@@ -58,14 +58,34 @@ const ShuffleHero = () => {
             </button>
           ) : (
             <>
-              {/* <button className="btn2" onClick={register} type="button">
+              <button className="btn2" onClick={register} type="button">
                 Register
-              </button> */}
+              </button>
+              <button className="btn2" onClick={login} type="button">
+                &nbsp;&nbsp;Log In&nbsp;&nbsp;
+              </button>
+              <button className="btn2" onClick={() => navigate("/auth/")}>
+              👏&nbsp; Dashboard
+            </button>
+            </>
+          )}
+          {/* if(isAuthenticated){
+            <>
+            <button className="btn2" onClick={() => navigate("/auth/")}>
+              👏&nbsp; Dashboard
+            </button>
+            </>
+          }
+          else{
+            <>
+            <button className="btn2" onClick={register} type="button">
+                Register
+              </button>
               <button className="btn2" onClick={login} type="button">
                 &nbsp;&nbsp;Log In&nbsp;&nbsp;
               </button>
             </>
-          )}
+          } */}
         </div>
       </nav>
       <section className="shuffle-hero">
