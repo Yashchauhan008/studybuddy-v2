@@ -21,11 +21,4 @@ export const getMyAuth = () =>{
     var auth = localStorage.getItem("myAuth") 
     return auth;
 }
-
-// export const setMyAuth = (value) => {
-//     sessionStorage.setItem("isAuthenticated", value);
-//   };
-//   export const getMyAuth = () => {
-//     return sessionStorage.getItem("isAuthenticated");
-//   };
   

@@ -24,16 +24,15 @@ import react1 from "../assets/react.png";
 import ruby from "../assets/ruby.png";
 import sql from "../assets/sql.png";
 import ts from "../assets/ts.png";
-import gsap from 'gsap';
+import gsap from "gsap";
 import SplitType from "split-type";
-import revealAnimation from "../components/Reveal"
+import revealAnimation from "../components/Reveal";
 
 const ShuffleHero = () => {
   const navigate = useNavigate();
 
   // const { user } = useKindeAuth/();
   const { login, register, user, isAuthenticated, logout } = useKindeAuth();
-
 
   // Run addAnimation once on component mount
   revealAnimation();
@@ -58,34 +57,18 @@ const ShuffleHero = () => {
             </button>
           ) : (
             <>
-              <button className="btn2" onClick={register} type="button">
+             <button className="btn2" onClick={register} type="button">
                 Register
-              </button>
+              </button> 
               <button className="btn2" onClick={login} type="button">
-                &nbsp;&nbsp;Log In&nbsp;&nbsp;
+                &nbsp;&nbsp;Login&nbsp;&nbsp;
               </button>
-              <button className="btn2" onClick={() => navigate("/auth/")}>
-              👏&nbsp; Dashboard
-            </button>
+              
             </>
           )}
-          {/* if(isAuthenticated){
-            <>
-            <button className="btn2" onClick={() => navigate("/auth/")}>
-              👏&nbsp; Dashboard
-            </button>
-            </>
-          }
-          else{
-            <>
-            <button className="btn2" onClick={register} type="button">
-                Register
-              </button>
-              <button className="btn2" onClick={login} type="button">
-                &nbsp;&nbsp;Log In&nbsp;&nbsp;
-              </button>
-            </>
-          } */}
+          {/* <button className="btn2" onClick={login} type="button">
+            &nbsp;&nbsp;👏&nbsp;Dashboard&nbsp;&nbsp;
+          </button> */}
         </div>
       </nav>
       <section className="shuffle-hero">
@@ -93,16 +76,15 @@ const ShuffleHero = () => {
           <span className="subheading reveal">hay buddy</span>
           <h3 className="heading">
             From <span className="Confusion">Confusion</span>
-            <br/> to{" "}
-            <span className="Clarity">Clarity</span>
+            <br /> to <span className="Clarity">Clarity</span>
           </h3>
           <p className="description reveal">
             Ultimate Study Resources and Lab Solutions for Students!
           </p>
         </div>
-          <button className="btn2" onClick={login} type="button">
-            &nbsp;&nbsp;Get Started&nbsp;&nbsp;
-          </button>
+        <button className="btn2" onClick={login} type="button">
+          &nbsp;&nbsp;Get Started&nbsp;&nbsp;
+        </button>
         <ShuffleGrid />
       </section>
     </>
