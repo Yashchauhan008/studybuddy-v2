@@ -27,7 +27,7 @@ import ts from "../assets/ts.png";
 import gsap from "gsap";
 import SplitType from "split-type";
 import revealAnimation from "../components/Reveal";
-import { getMyAuth, setMyAuth } from "../utils/helpers";
+import { getMyAuth, getUserName, setMyAuth } from "../utils/helpers";
 
 const ShuffleHero = () => {
   const navigate = useNavigate();
@@ -44,6 +44,8 @@ const ShuffleHero = () => {
   }, [isAuthenticated]);
 
   const myAuth = getMyAuth() === "true";
+
+  const username = getUserName()
 
   revealAnimation();
   // console.log(user);
@@ -67,7 +69,7 @@ const ShuffleHero = () => {
             </button>
           ) : (
             <>
-            <button className="btn2" onClick={() => navigate("/auth/")}>
+            <button className="btn2" onClick={() => navigate(`/auth/${username}`)}>
               👏&nbsp; Dashboard
             </button>
               <button className="btn2" onClick={register} type="button">
