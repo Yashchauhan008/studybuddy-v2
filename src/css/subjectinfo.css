@@ -1,0 +1,192 @@
+.subjectinfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+    width: 100%;
+    box-sizing: border-box;
+    /* background-color: rgba(65, 105, 225, 0.225); */
+}
+.sub-data{
+    justify-content: start;
+    position:relative;
+    padding: 10px;
+    width: 90vw;
+    height: 450px;
+    border-radius: 50px;
+    margin: 0 100px 100px 100px;
+    background-color: var(--color2);
+    color: var(--color1);
+}
+.sub-data >img{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    margin: 35px;
+    border-radius: 50px;
+    z-index:101;
+}
+.sub-data h1{
+    /* background-color: darkred; */
+    font-size: 60px;
+    line-height: 60px;
+    padding-left: 70px;
+    overflow: hidden; 
+    padding-bottom: 10px;
+}
+.sub-data p{
+    width: 50%;
+    transform: translateY(-20px);
+    padding-left: 70px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.sub-data h2{
+    transform: translateY(-20px);
+    padding-left: 70px;
+}
+.sub-data h3{
+    padding-left: 70px;
+    transform: translateY(-20px);
+}
+.sub-data button{
+    transform: translateY(-20px);
+    margin-left: 70px;
+}
+.subject-btn{
+    margin-left: 70px;
+    position: absolute;
+    top: 650px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgba(255, 0, 0, 0.477);
+    height: 40px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: 0.5s;
+}
+.subject-btn:hover{
+    background-color: red;
+}
+.subject-btn:active{
+    scale: 1.2;
+}
+.subject-btn h4{
+    font-size: 20px;
+}
+.subject-btn img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.startprep{
+    position: absolute;
+    bottom: 50px;
+    right: 100px;
+}
+
+.startprep {
+    font-size: 20px;
+    overflow: hidden;
+    height: 4rem;
+    padding: 0 3rem;
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .startprep:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .button-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .startprep::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(2,245,255,1) 17.8% , rgba(255,94,247,1) 100.2%);
+
+    transition: all 0.475s;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .sub-data{
+        /* background-color: red; */
+        height: 500px;
+        margin: 0;
+        width: 80vw;
+        /* overflow: hidden; */
+        transform: translateY(-80px);
+        background-color: transparent;
+        color: white;
+        font-weight: 100;
+    }
+    .sub-data h1{
+        /* position: absolute; */
+        color: black;
+        background-color: rgb(68, 251, 251);
+        border-radius:20px;
+        transform: translateY(-40px);
+        top: 0;
+        padding: 0 0 20px 0;
+        text-align: center;
+        /* width: 80%; */
+        /* background-color: gray; */
+    }
+    .sub-data p{
+        transform: translateY(-60px);
+        position: relative;
+        height: 400px;
+        text-overflow: ellipsis;
+        padding: 0;
+        width: 100%;
+        overflow-y: auto;
+        font-size: 17px;
+        text-align: justify;
+    }
+    .sub-data img{
+        position: absolute;
+        top: 0;
+        margin: 0;
+        height: 100px;
+        width: 100%;
+        opacity: 0%;
+    }
+    .sub-data h2{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        background-color: #A2F7FF;
+        transform: translateY(10px);
+        border-radius: 50px;
+        color: black;
+        text-transform: capitalize;
+    }
+    .startprep{
+        box-sizing: border-box;
+        bottom: 30px;
+        width: 80%;
+        right: 10%;
+    }
+  }

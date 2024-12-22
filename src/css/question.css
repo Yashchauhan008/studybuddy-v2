@@ -1,0 +1,293 @@
+.sub-info {
+  margin-top: 30px;
+  height: 40px;
+  /* padding: 0 300px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 500px) {
+  .sub-info{
+    padding-right: 50px;
+  }
+  .sub-info input {
+    margin: 0;
+  }
+  .questionPage h1{
+    /* background-color: gray !important;; */
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.sub-info input {
+  position: relative;
+  transform: translateY(10px);
+  background-color: rgba(255, 255, 255, 0.138);
+  border: none;
+  color: var(--color3);
+  margin: 0 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  max-width: 400px;
+}
+
+.sub-info input:focus {
+  outline: none;
+}
+
+.sub-info h1 {
+  text-align: right;
+  padding: 0 0 0 50px;
+  line-height: 30px;
+}
+
+.difficulty-dropdown {
+  transform: translateY(10px);
+  outline: none;
+  padding: 5px;
+  width: 100px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--color4);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  color: var(--color3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.difficulty-dropdown:focus {
+  border-color: var(--color2);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  transition: 1s;
+}
+
+.difficulty-dropdown option {
+  padding: 10px;
+}
+
+.questionPage h2 {
+  text-align: center;
+}
+
+.question {
+  align-items: center;
+  margin: 10px 100px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  overflow: hidden;
+  /* max-width: 1500px; */
+}
+@media screen and (max-width:768px) {
+  .question {
+    width: 90%;
+    margin: 10px 5%;
+  }
+  .que-top{
+    flex-direction: column;
+    padding: 10px 0px 0px 0px;
+    background-color: red;
+  }
+  .que-top h3{
+    font-size: 15px;
+  }
+  .que-top-left{
+    padding: 0;
+  }
+}
+.que-top {
+  font-size: 18px;
+  padding: 10px 20px 0px 20px;
+  /* padding: ; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color1);
+  /* background-color: pink; */
+  cursor: pointer;
+  /* border-radius: 50px; */
+
+}
+
+.que-top-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.que-btm {
+  padding: 0px 0px;
+  background-color: var(--color4);
+  max-height: 0;
+  font-size: 18px;
+  overflow: visible; /* Allow content to overflow if needed */
+  transition: 0.9s;
+}
+
+.que-top.active + .que-btm {
+  padding: 20px 30px;
+  max-height: 5000px; /* A large value to allow expansion */
+  transition: 0.9s;
+}
+
+.difficulty {
+  padding: 2px 10px 4px 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.easy {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.medium {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.hard {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.important {
+  background-color: #cce5ff;
+  color: #004085;
+  border: 1px solid #b8daff;
+}
+
+.answer-text {
+  white-space: pre-wrap; /* Preserve whitespace and wrap text */
+}
+
+.label .container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+/* Hide the default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.5em;
+  width: 1.5em;
+  background-color: #e5e5e5;
+  border-radius:5px;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: seagreen;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 0.55em;
+  top: 0.35em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 34px;
+ }
+ 
+ .switch input {
+  display: none;
+ }
+ 
+ .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3C3C3C;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+ }
+ 
+ .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+ }
+ 
+ input:checked + .slider {
+  background-color: #0E6EB8;
+ }
+ 
+ input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+ }
+ 
+ input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(85px);
+ }
+ 
+ /*------ ADDED CSS ---------*/
+ .slider:after {
+  content: 'private';
+  color: white;
+  display: block;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+ }
+ 
+ input:checked + .slider:after {
+  content: 'public';
+ }
+ 
+ /*--------- END --------*/
