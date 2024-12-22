@@ -5,6 +5,7 @@ import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import { useNavigate } from "react-router-dom";
+import { setMyAuth } from "../utils/helpers";
 
 const notify = () => {
   toast("🦄 Wow so easy!", {
@@ -59,11 +60,12 @@ const Navbar = () => {
                 <a href="#">
                   <button
                     className="btn1"
-                    onClick={() =>
+                    onClick={() =>{
+                      setMyAuth(false)
                       logout({
                         logoutParams: { returnTo: window.location.origin },
                       })
-                    }
+                    }}
                   >
                     Log Out
                   </button>

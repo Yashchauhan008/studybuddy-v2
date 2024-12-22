@@ -10,6 +10,7 @@ import Loader from "../components/Loader";
 import "../index.css";
 import revealAnimation from "../components/Reveal";
 import gsap from "gsap";
+import { getUserName, setUserName } from "../utils/helpers";
 
 const Home = () => {
   const { user } = useKindeAuth();
@@ -45,7 +46,7 @@ const Home = () => {
         setLoading(false);
       }
     };
-
+    
     const checkEmail = async () => {
       try {
         const response = await fetch(`${base_url}/user`);
@@ -54,11 +55,15 @@ const Home = () => {
         }
         const data = await response.json();
         const userFound = data.find((u) => u.email === user.email);
-
+        
         if (userFound) {
           setExistingUser(userFound);
+          // =================local user logic for url====================
+          console.log(userFound.username)
+          setUserName(userFound.username)
+          const localusername = getUserName()
           sessionStorage.setItem("isAdmin", userFound.role === "admin");
-          navigate(`/auth/${userFound.username}`);
+          navigate(`/auth/${localusername}`);
         } else {
           setShowPopup(true);
         }
@@ -67,9 +72,9 @@ const Home = () => {
         setLoading(false);
       }
     };
-
-    fetchSubjects();
+    
     checkEmail();
+    fetchSubjects();
   }, [user.email, navigate]);
 
   // Trigger GSAP animation after subjects have been rendered
@@ -90,7 +95,7 @@ const Home = () => {
     }
   }, [subjects]); // This effect runs whenever the subjects array changes
 
-  revealAnimation(); // Assuming this is some additional animation
+  // revealAnimation(); // Assuming this is some additional animation
 
   const toggleSetAddSub = () => {
     setAddsub(!addSub);

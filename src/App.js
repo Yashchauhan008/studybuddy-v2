@@ -5,9 +5,11 @@ import LocalRoutes from './routes/LocalRoutes';
 import Error404 from './pages/Error404';
 import AuthRoutes from './routes/AuthRoutes';
 import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
+import { getMyAuth } from './utils/helpers';
 
 const App = () => {
   const { isAuthenticated } = useKindeAuth();
+  // const isAuthenticated = getMyAuth();
 
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
 
