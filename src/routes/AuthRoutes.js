@@ -8,7 +8,6 @@ import Navbar from "../components/Navbar";
 import Profile from "../pages/Profile";
 import QuestionMaster from "../pages/QuestionMaster";
 import Display from "../pages/Display";
-import SubjectsComponent from "../pages/service/Subjects";
 import Srs from "../pages/service/Srs";
 import CyberSecurity from "../pages/service/CyberSecurity";
 import MachineLearning from "../pages/service/MachineLearning";
@@ -16,6 +15,7 @@ import Python from "../pages/service/Python";
 import ComputerNetworks from "../pages/service/ComputerNetworks";
 import DataMining from "../pages/service/DataMining";
 import MernProjects from "../pages/service/MernProjects";
+import SubjectsComponent from "../pages/service/SubjectsComponent";
 
 const WithLayout = ({ children, showLayout }) => {
   return showLayout ? (

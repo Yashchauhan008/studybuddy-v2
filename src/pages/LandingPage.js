@@ -69,9 +69,9 @@ const ShuffleHero = () => {
             </button>
           ) : (
             <>
-            <button className="btn2" onClick={() => navigate(`/auth/${username}`)}>
+            {/* <button className="btn2" onClick={() => navigate(`/auth/${username}`)}>
               👏&nbsp; Dashboard
-            </button>
+            </button> */}
               <button className="btn2" onClick={register} type="button">
                 Register
               </button>
