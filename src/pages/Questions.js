@@ -7,9 +7,10 @@ import { base_url } from "../utils/baseUrl";
 import Loader from "../components/Loader";
 import BackButton from "../components/BackButton";
 import gsap from "gsap"; // Import GSAP
+import { getUserName } from "../utils/helpers";
 
 const Questions = () => {
-  const { username, subjectId, subjectName } = useParams();
+  const {subjectId, subjectName } = useParams();
   const [subject, setSubject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,7 +25,9 @@ const Questions = () => {
     difficultyLevel: "easy",
     isPrivate: false,
   });
+  const username = getUserName()
 
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 500);
@@ -183,7 +186,7 @@ const Questions = () => {
 
   return (
     <div className="questionPage">
-      <BackButton path={`/auth/${username}/${subjectName}`} />
+      <BackButton path={`/auth/subjects/${subjectName}`} />
       {subject && (
         <>
           {isMobile ? <h1>{subject.name}</h1> : null}

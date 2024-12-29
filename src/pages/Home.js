@@ -36,16 +36,16 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchSubjects = async () => {
-      try {
-        const response = await axios.get(`${base_url}/subject/`);
-        setSubjects(response.data);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching subjects:", error);
-        setLoading(false);
-      }
-    };
+    // const fetchSubjects = async () => {
+    //   try {
+    //     const response = await axios.get(`${base_url}/subject/`);
+    //     setSubjects(response.data);
+    //     setLoading(false);
+    //   } catch (error) {
+    //     console.error("Error fetching subjects:", error);
+    //     setLoading(false);
+    //   }
+    // };
     
     const checkEmail = async () => {
       try {
@@ -63,7 +63,8 @@ const Home = () => {
           setUserName(userFound.username)
           const localusername = getUserName()
           sessionStorage.setItem("isAdmin", userFound.role === "admin");
-          navigate(`/auth/${localusername}`);
+          // navigate(`/auth/home`);
+          navigate(`/auth/subjects`);
         } else {
           setShowPopup(true);
         }
@@ -74,7 +75,7 @@ const Home = () => {
     };
     
     checkEmail();
-    fetchSubjects();
+    // fetchSubjects();
   }, [user.email, navigate]);
 
   // Trigger GSAP animation after subjects have been rendered
@@ -93,17 +94,17 @@ const Home = () => {
         }
       );
     }
-  }, [subjects]); // This effect runs whenever the subjects array changes
+  }, [subjects]);
 
   // revealAnimation(); // Assuming this is some additional animation
 
-  const toggleSetAddSub = () => {
-    setAddsub(!addSub);
-  };
+  // const toggleSetAddSub = () => {
+  //   setAddsub(!addSub);
+  // };
 
-  const handleCardClick = (name) => {
-    navigate(`/auth/${username}/${name}`);
-  };
+  // const handleCardClick = (name) => {
+  //   navigate(`/auth/${username}/${name}`);
+  // };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -146,29 +147,29 @@ const Home = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
 
-    try {
-      const subjectData = {
-        name: subjectName,
-        description: subjectDescription,
-        imgUrl: subjectImageURL,
-        cheatsheet: cheatsheet,
-      };
+  //   try {
+  //     const subjectData = {
+  //       name: subjectName,
+  //       description: subjectDescription,
+  //       imgUrl: subjectImageURL,
+  //       cheatsheet: cheatsheet,
+  //     };
 
-      const response = await axios.post(`${base_url}/subject/`, subjectData);
+  //     const response = await axios.post(`${base_url}/subject/`, subjectData);
 
-      console.log("Subject added successfully:", response.data);
-      setSubjectName("");
-      setSubjectDescription("");
-      setSubjectImageURL("");
-      setCheatsheet("");
-      // togglePopup(); // Close the popup after successful submission
-    } catch (error) {
-      console.error("Error adding subject:", error);
-    }
-  };
+  //     console.log("Subject added successfully:", response.data);
+  //     setSubjectName("");
+  //     setSubjectDescription("");
+  //     setSubjectImageURL("");
+  //     setCheatsheet("");
+  //     // togglePopup(); // Close the popup after successful submission
+  //   } catch (error) {
+  //     console.error("Error adding subject:", error);
+  //   }
+  // };
 
   if (loading) {
     return <Loader />;
@@ -177,9 +178,9 @@ const Home = () => {
   return (
     <>
       <div className="home">
-        <h1 className="reveal">Subjects</h1>
+        {/* <h1 className="reveal">Subjects</h1> */}
         {/* <Loader/> */}
-        <div className="subject-cards">
+        {/* <div className="subject-cards">
           {isAdmin ? (
             <>
               <div className="subject-card empty-card">
@@ -210,15 +211,12 @@ const Home = () => {
                   {index + 1}. {subject.name}
                 </h2>
                 <p>{subject.description}</p>
-                {/* <div className="like-btn">
-                  <h3>{subject.likes}</h3>
-                  <img src={heart} alt="heart" />
-                </div> */}
               </div>
               <div className="circle">77</div>
             </div>
           ))}
-        </div>
+        </div> */}
+        <div>jjrdjfghv</div>
       </div>
       {showPopup && (
         <div className="popup">
@@ -263,7 +261,7 @@ const Home = () => {
         </div>
       )}
 
-      {addSub && (
+      {/* {addSub && (
         <div className="popup">
           <div className="popup-content">
             <h2>Add Subject</h2>
@@ -307,7 +305,7 @@ const Home = () => {
             </form>
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };

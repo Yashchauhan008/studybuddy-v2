@@ -11,7 +11,7 @@ import BackButton from "../components/BackButton";
 
 const SubjectInfo = () => {
   const { user } = useAuth0();
-  const { username, subjectName } = useParams();
+  const {subjectName } = useParams();
   const [subject, setSubject] = useState(null);
   const [error, setError] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -105,7 +105,7 @@ const SubjectInfo = () => {
   return (
     <>
       <div className="subjectinfo">
-        <BackButton path={`/auth/${username}`} />
+        <BackButton path={`/auth/subjects`} />
         <div className="sub-data">
           {isEditing ? (
             <>
@@ -163,7 +163,7 @@ const SubjectInfo = () => {
         <button
           className="startprep"
           onClick={() =>
-            navigate(`/auth/${username}/${subjectName}/${subject._id}`)
+            navigate(`/auth/subjects/${subjectName}/${subject._id}`)
           }
         >
           <span className="button-content">Start Preparation</span>

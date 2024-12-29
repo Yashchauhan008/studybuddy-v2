@@ -113,6 +113,20 @@ const Navbar = () => {
                   your resources
                 </div>
                 <div className="menu-cnt-left">
+                  {/* <button
+                    className="menu-item"
+                    onMouseEnter={() => handleHover(base)}
+                    onClick={()=>{navigate("/auth/home");setMenuTGL(!menuTGL)}}
+                  >
+                    <span>home</span>
+                  </button> */}
+                  <button
+                    className="menu-item"
+                    onMouseEnter={() => handleHover(base)}
+                    onClick={()=>{navigate("/auth/subjects");setMenuTGL(!menuTGL)}}
+                  >
+                    <span>subjects</span>
+                  </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(srs)}
