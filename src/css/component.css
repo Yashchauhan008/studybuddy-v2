@@ -107,6 +107,220 @@
   object-fit: cover;
 }
 /* ------------------------ */
+/* .menu-cnt{
+  box-sizing: border-box;
+  position: absolute;
+  top: 100px;
+  left: 5%;
+  height: 85vh;
+  width: 90%;
+  border-radius: 40px 40px 0 0;
+  background-color: rgb(255, 138, 157);
+  display: flex; */
+  /* align-items: center; */
+  /* justify-content: start; */
+  /* flex-direction: column;
+  gap: 20px;
+  padding-top: 100px;
+  flex-wrap: wrap;
+  
+} */
+.menu-cnt {
+  box-sizing: border-box;
+  position: absolute;
+  top: 100px;
+  left: 5%;
+  height: 85vh;
+  width: 90%;
+  border-radius: 40px 40px 0 0;
+  background-color: #121212;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
+  row-gap: 0;
+  column-gap: 20px;
+  padding-top: 130px;
+  overflow-y: auto;
+}
+
+.menu-cnt::-webkit-scrollbar {
+  display: none;
+}
+.menu-cnt-left::-webkit-scrollbar {
+  display: none;
+}
+.menu-cnt-left{
+  height: 100%;
+  /* background-color: red; */
+  width: 60%;
+  overflow-y: auto;
+}
+.menu-cnt-right{
+  height: 95%;
+  /* background-color:pink; */
+  /* margin-top: 20px; */
+  width: 35%;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.menu-cnt-right img{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.menu-item {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  height: 100px;
+  font-weight: 700;
+  width: 90%;
+  margin: 0 5%;
+  color: ghostwhite;
+  position: relative;
+  transition: color 0.3s ease;
+  /* background-color: green; */
+  /* background: #66ff66; */
+  background: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 94, 247, 1) 17.8%,
+    rgba(2, 245, 255, 1) 100.2%
+  );
+  margin-top: 10px;
+  border-radius: 35px;
+  overflow: hidden;
+  letter-spacing: 0.05rem;
+
+
+}
+.menu-cnt-left{
+  overflow-y: auto;
+}
+.hovered-image {
+  width: 100%; /* Adjust as needed */
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+
+.hovered-image.fade-out {
+  opacity: 0;
+}
+
+.hovered-image.fade-in {
+  opacity: 1;
+}
+
+.menu-cnt-top{
+  /* background-color: red; */
+  position: absolute;
+  top: 0;
+  height: 130px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  text-transform: lowercase;
+  font-weight: 600;
+  /* align-items: end; */
+  /* justify-content: end; */
+}
+/* From Uiverse.io by BHARGAVPATEL1244 */ 
+/* .menu-item {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #66ff66;
+  color: ghostwhite;
+ } */
+ 
+ .menu-item span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+ }
+ 
+ .menu-item:hover span {
+  color: black;
+ }
+ 
+ .menu-item::before,
+ .menu-item::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+ }
+ 
+ .menu-item::before {
+  content: "";
+  background: gray;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+ }
+ 
+ .menu-item:hover::before {
+  transform: translate3d(100%, 0, 0);
+ }
+ @media screen and (max-width: 989px) {
+  .menu-cnt-right{
+    display: none;
+  }
+  .menu-cnt-left{
+    width: 100%;
+  }
+  .menu-cnt-top{
+    font-size: 30px !important;
+    text-transform: uppercase;
+  }
+  .menu-item::before {
+    background: radial-gradient(
+      circle farthest-corner at 10% 20%,
+      rgba(255, 94, 247, 1) 17.8%,
+      rgba(2, 245, 255, 1) 100.2%
+    );
+  }
+}
+/* .menu-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #c84747;
+  transition: width 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #c84747;
+}
+
+.menu-item:hover::after {
+  width: 100%;
+} */
+
+
+/* ------------------------ */
 .dropbtn {
   background-color: transparent;
   color: white;
