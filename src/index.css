@@ -16,6 +16,10 @@ body {
   color: var(--color3);
 }
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 .reveal{
   background-color: transparent;
 }

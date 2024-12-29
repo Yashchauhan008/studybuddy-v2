@@ -130,42 +130,49 @@ const Navbar = () => {
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(srs)}
+                    onClick={()=>{navigate("/auth/srs");setMenuTGL(!menuTGL)}}
                   >
                     <span>SRS</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(cs)}
+                    onClick={()=>{navigate("/auth/cyber-Security");setMenuTGL(!menuTGL)}}
                   >
                     <span>syber security</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(ml)}
+                    onClick={()=>{navigate("/auth/machine-learning");setMenuTGL(!menuTGL)}}
                   >
                     <span>machine learning</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(py)}
+                    onClick={()=>{navigate("/auth/python");setMenuTGL(!menuTGL)}}
                   >
                     <span>python</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(cn)}
+                    onClick={()=>{navigate("/auth/computer-networks");setMenuTGL(!menuTGL)}}
                   >
                     <span>computer networks</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(dm)}
+                    onClick={()=>{navigate("/auth/data-mining");setMenuTGL(!menuTGL)}}
                   >
                     <span>data mining</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(mern)}
+                    onClick={()=>{navigate("/auth/mern-projects");setMenuTGL(!menuTGL)}}
                   >
                     <span>mern projects</span>
                   </button>

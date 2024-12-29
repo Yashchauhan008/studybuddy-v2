@@ -8,7 +8,14 @@ import Navbar from "../components/Navbar";
 import Profile from "../pages/Profile";
 import QuestionMaster from "../pages/QuestionMaster";
 import Display from "../pages/Display";
-import SubjectsComponent from "../pages/service/subjects";
+import SubjectsComponent from "../pages/service/Subjects";
+import Srs from "../pages/service/Srs";
+import CyberSecurity from "../pages/service/CyberSecurity";
+import MachineLearning from "../pages/service/MachineLearning";
+import Python from "../pages/service/Python";
+import ComputerNetworks from "../pages/service/ComputerNetworks";
+import DataMining from "../pages/service/DataMining";
+import MernProjects from "../pages/service/MernProjects";
 
 const WithLayout = ({ children, showLayout }) => {
   return showLayout ? (
@@ -65,11 +72,66 @@ const AuthRoutes = () => {
         }
       />
       <Route
-        // path="/:username/:subjectName"
         path="/profile"
         element={
           <WithLayout showLayout={true}>
             <Profile />
+          </WithLayout>
+        }
+      />
+      <Route
+        path="/srs"
+        element={
+          <WithLayout showLayout={true}>
+            <Srs />
+          </WithLayout>
+        }
+      />
+      <Route
+        path="/cyber-Security"
+        element={
+          <WithLayout showLayout={true}>
+            <CyberSecurity />
+          </WithLayout>
+        }
+      />
+      <Route
+        path="/machine-learning"
+        element={
+          <WithLayout showLayout={true}>
+            <MachineLearning />
+          </WithLayout>
+        }
+      />
+      <Route
+        path="/python"
+        element={
+          <WithLayout showLayout={true}>
+            <Python />
+          </WithLayout>
+        }
+      />
+      <Route
+        path="/computer-networks"
+        element={
+          <WithLayout showLayout={true}>
+            <ComputerNetworks />
+          </WithLayout>
+        }
+      />
+      <Route
+        path="/data-mining"
+        element={
+          <WithLayout showLayout={true}>
+            <DataMining />
+          </WithLayout>
+        }
+      />
+      <Route
+        path="/mern-projects"
+        element={
+          <WithLayout showLayout={true}>
+            <MernProjects />
           </WithLayout>
         }
       />

@@ -101,7 +101,7 @@ const SubjectsComponent = () => {
       <div className="home">
       {/* <BackButton path={"/auth/home"} /> */}
         <h1 className="reveal">Subjects</h1>
-        <div className="subject-cards">
+        <div className="display-cards">
           {isAdmin && (
             <div className="subject-card empty-card">
               <div className="subject-data">
