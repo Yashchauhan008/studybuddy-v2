@@ -36,17 +36,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // const fetchSubjects = async () => {
-    //   try {
-    //     const response = await axios.get(`${base_url}/subject/`);
-    //     setSubjects(response.data);
-    //     setLoading(false);
-    //   } catch (error) {
-    //     console.error("Error fetching subjects:", error);
-    //     setLoading(false);
-    //   }
-    // };
-    
+
     const checkEmail = async () => {
       try {
         const response = await fetch(`${base_url}/user`);
@@ -55,15 +45,14 @@ const Home = () => {
         }
         const data = await response.json();
         const userFound = data.find((u) => u.email === user.email);
-        
+
         if (userFound) {
           setExistingUser(userFound);
           // =================local user logic for url====================
-          console.log(userFound.username)
-          setUserName(userFound.username)
-          const localusername = getUserName()
+          console.log(userFound.username);
+          setUserName(userFound.username);
+          const localusername = getUserName();
           sessionStorage.setItem("isAdmin", userFound.role === "admin");
-          // navigate(`/auth/home`);
           navigate(`/auth/subjects`);
         } else {
           setShowPopup(true);
@@ -71,9 +60,11 @@ const Home = () => {
       } catch (error) {
         console.error("Error fetching users:", error);
         setLoading(false);
+      } finally {
+        setLoading(false);
       }
     };
-    
+
     checkEmail();
     // fetchSubjects();
   }, [user.email, navigate]);
@@ -83,28 +74,28 @@ const Home = () => {
     if (subjects.length > 0) {
       // Apply GSAP animation to all subject cards
       gsap.fromTo(
-        '.subject-card', // Target all elements with class "subject-card"
+        ".subject-card", // Target all elements with class "subject-card"
         { y: 100, opacity: 0 }, // Starting state (100px below and invisible)
-        { 
-          y: 0, 
-          opacity: 1, 
-          duration: 1, 
-          ease: 'power3.out', 
-          stagger: 0.1 // Each card starts 0.1 seconds after the previous one
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.1, // Each card starts 0.1 seconds after the previous one
         }
       );
     }
   }, [subjects]);
 
-  // revealAnimation(); // Assuming this is some additional animation
+  revealAnimation(); // Assuming this is some additional animation
 
-  // const toggleSetAddSub = () => {
-  //   setAddsub(!addSub);
-  // };
+  const toggleSetAddSub = () => {
+    setAddsub(!addSub);
+  };
 
-  // const handleCardClick = (name) => {
-  //   navigate(`/auth/${username}/${name}`);
-  // };
+  const handleCardClick = (name) => {
+    navigate(`/auth/${username}/${name}`);
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -131,7 +122,8 @@ const Home = () => {
       const responseData = await response.json();
 
       if (response.ok) {
-        navigate(`/auth/${username}`);
+        setUserName(username);
+        navigate(`/auth/subjects`);
       } else {
         if (responseData.message === "Username already exists") {
           alert("Username already exists. Please choose a different one.");
@@ -147,29 +139,6 @@ const Home = () => {
     }
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const subjectData = {
-  //       name: subjectName,
-  //       description: subjectDescription,
-  //       imgUrl: subjectImageURL,
-  //       cheatsheet: cheatsheet,
-  //     };
-
-  //     const response = await axios.post(`${base_url}/subject/`, subjectData);
-
-  //     console.log("Subject added successfully:", response.data);
-  //     setSubjectName("");
-  //     setSubjectDescription("");
-  //     setSubjectImageURL("");
-  //     setCheatsheet("");
-  //     // togglePopup(); // Close the popup after successful submission
-  //   } catch (error) {
-  //     console.error("Error adding subject:", error);
-  //   }
-  // };
 
   if (loading) {
     return <Loader />;
@@ -216,7 +185,7 @@ const Home = () => {
             </div>
           ))}
         </div> */}
-        <div>jjrdjfghv</div>
+        {/* <div>jjrdjfghv</div> */}
       </div>
       {showPopup && (
         <div className="popup">
@@ -260,52 +229,6 @@ const Home = () => {
           </div>
         </div>
       )}
-
-      {/* {addSub && (
-        <div className="popup">
-          <div className="popup-content">
-            <h2>Add Subject</h2>
-
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                placeholder="Subject Name"
-                value={subjectName}
-                onChange={(e) => setSubjectName(e.target.value)}
-              />
-              <input
-                type="textarea"
-                placeholder="Subject Description"
-                value={subjectDescription}
-                onChange={(e) => setSubjectDescription(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Subject Image URL"
-                value={subjectImageURL}
-                onChange={(e) => setSubjectImageURL(e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Cheatsheet"
-                value={cheatsheet}
-                onChange={(e) => setCheatsheet(e.target.value)}
-              />
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  margin: "20px 10px 0 10px",
-                }}
-              >
-                <button onClick={toggleSetAddSub}>Close</button>
-                <button type="submit">Add Subject</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )} */}
     </>
   );
 };
