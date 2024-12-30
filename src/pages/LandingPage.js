@@ -36,16 +36,35 @@ const ShuffleHero = () => {
   const { login, register, user, isAuthenticated, logout } = useKindeAuth();
 
   useEffect(() => {
+    //just to start server earier when user is on landing page
+    const fetchData = async () => {
+      const response = await fetch("https://studybuddy-oo8i.onrender.com/");
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const contentType = response.headers.get("Content-Type");
+
+      let data;
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+        console.log("JSON Data:", data);
+      } else {
+        data = await response.text();
+      }
+    };
+
+    fetchData();
     const temp = getMyAuth();
     if (temp == null) {
-      setMyAuth(isAuthenticated)
+      setMyAuth(isAuthenticated);
     }
-    console.log(temp)
+    console.log(temp);
   }, [isAuthenticated]);
 
   const myAuth = getMyAuth() === "true";
 
-  const username = getUserName()
+  const username = getUserName();
 
   revealAnimation();
   // console.log(user);
@@ -69,7 +88,7 @@ const ShuffleHero = () => {
             </button>
           ) : (
             <>
-            {/* <button className="btn2" onClick={() => navigate(`/auth/${username}`)}>
+              {/* <button className="btn2" onClick={() => navigate(`/auth/${username}`)}>
               👏&nbsp; Dashboard
             </button> */}
               <button className="btn2" onClick={register} type="button">
