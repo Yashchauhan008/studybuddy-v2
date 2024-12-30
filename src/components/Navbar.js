@@ -139,7 +139,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleHover(cs)}
                     onClick={()=>{navigate("/auth/cyber-Security");setMenuTGL(!menuTGL)}}
                   >
-                    <span>syber security</span>
+                    <span>cyber security</span>
                   </button>
                   <button
                     className="menu-item"
