@@ -518,8 +518,45 @@
   .srs-card button{
     position: absolute;
     bottom: 16px;
-    right: 0;
+    right: 16px;
   }
   .srs-card h2{
     margin: 0;
   }
+
+  @media screen and (max-width: 700px) {
+    .srs-card{
+      /* background-color: red; */
+      height: 300px;
+      width: 80%;
+    }
+    .srs-card h2{
+      /* background-color: pink; */
+    }
+     .srs-img{
+      position: absolute;
+      top:168px;
+     }
+     .srs-img img{
+      bottom: 16px;
+      aspect-ratio: 1/1;
+      width: 92%;
+    }
+    .srs-card button{
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      top: 170px;
+      border-radius: 25px;
+      padding: 0 30px;
+    }
+    
+    .srs-card-right{
+      /* background: royalblue; */
+      left: 16px;
+      top: 16px;
+      padding: 0;
+      width: 90%;
+    } 
+  }
+  

@@ -22,6 +22,7 @@ const Srs = () => {
               <div className="srs-card-right">
                 <h2>{srs.srs_name}</h2>
                 <p>{srs.description}</p>
+              </div>
                 <button
                   onClick={() =>
                     window.open(srs.location, "_blank", "noopener,noreferrer")
@@ -30,7 +31,6 @@ const Srs = () => {
                 >
                   Download
                 </button>
-              </div>
               {/* Dynamically load images from the assets folder */}
               {srs.imgUrl && (
                 <div className="srs-img">
