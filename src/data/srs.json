@@ -3,7 +3,7 @@
       "id": 1,
       "srs_name": "taxi management",
       "description": "A system to manage taxi operations, bookings, driver assignments, and customer feedback efficiently.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUhgycKMCleQ81UDk3hi90JP4ATgyLoSWMNbqK",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUXHgWUl73qkUJosMSpa5liB0REuYe8F1ZhVbX",
       "imgUrl": "taxi"
     }
     ,
@@ -11,7 +11,7 @@
       "id": 2,
       "srs_name": "bank management",
       "description": "A software solution for managing banking processes, transactions, customer accounts, and financial records.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUSJRlRanxjktsEm05YfKAZxa2CpvSIG8beBJ1",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUlxyLEgrEwmCoTtvgUrLQPuGBc17hXz6R0fMD",
       "imgUrl": "bank"
     }
     ,
@@ -19,7 +19,7 @@
       "id": 3,
       "srs_name": "car service management",
       "description": "A platform to handle car service appointments, maintenance records, customer requests, and service tracking.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUM9B6FUricG72d0XumszLWw5lSgYUxpTIePRf",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUEUTyh682DdVqITXM0G8Cj5nlhzUfONSosWPB",
       "imgUrl": "car-service"
     }
     ,
@@ -27,7 +27,7 @@
       "id": 4,
       "srs_name": "hotel management",
       "description": "A system for managing hotel reservations, guest check-ins, room allocation, and billing processes.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUYge8noIJXyuFkrRlt61sOfojKcbae78BPq9L",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUKxxM7doAuNn0eGR7ySPjk9IYvtOh8pmETqBg",
       "imgUrl": "hotel"
     }
     ,
@@ -35,7 +35,7 @@
       "id": 5,
       "srs_name": "loan management",
       "description": "A tool to track loan applications, approval processes, repayments, and interest calculations systematically.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUfLnLt4W4z36kJ5uLoqtaP9KpMYeZs1mhdiWF",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUxaKxdt2Cy4o3uts0niNQjYF5eOqmGc1bzUaX",
       "imgUrl": "loan"
     }
     ,
@@ -43,7 +43,7 @@
       "id": 6,
       "srs_name": "gym management",
       "description": "Software to manage gym memberships, workout schedules, trainer assignments, and billing activities effectively.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUERnWrb82DdVqITXM0G8Cj5nlhzUfONSosWPB",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUUb9BsOMaFE4IyVQYowrfeqpLX5cWkxK6jbSH",
       "imgUrl": "gym"
     }
     ,
@@ -51,7 +51,7 @@
       "id": 7,
       "srs_name": "blood bank management",
       "description": "A system for managing blood donations, inventories, recipient requests, and donor information securely.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUhJxgpLCleQ81UDk3hi90JP4ATgyLoSWMNbqK",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUdJ7bTO4h6OAUtDsLqeXG4RVgS801z7dTZic3",
       "imgUrl": "blood-bank"
     }
     ,
@@ -59,7 +59,7 @@
       "id": 8,
       "srs_name": "movie ticket management",
       "description": "A platform for booking movie tickets, managing seat availability, and processing payments for shows.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUu6VZC6a5xEmfIJhC4eQwHrqa7tog6S0pWvDb",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUCr2OICVSh1jmpbEqxUZcvAeLXt6VlgPBY09W",
       "imgUrl": "movies"
     }
     ,
@@ -67,7 +67,7 @@
       "id": 9,
       "srs_name": "admission management",
       "description": "A software system for managing student admissions, applications, documents, and enrollment procedures efficiently.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUqBawcrSxRpKTXAo7H1GNQO26UkEYzvfjgnsl",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUmi5fEh1xHvk1XKFwqeDnrA0ptWfJhid5YRUz",
       "imgUrl": "document"
     }
     ,
@@ -75,7 +75,7 @@
       "id": 10,
       "srs_name": "hospital management",
       "description": "A system to oversee patient records, doctor schedules, appointments, medical inventories, and billing seamlessly.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUqaren3SxRpKTXAo7H1GNQO26UkEYzvfjgnsl",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUTpmIZifOCS9h6Ng4jonTVbB17P30lEUdxpRk",
       "imgUrl": "hospital"
     }
     ,
@@ -83,7 +83,7 @@
       "id": 11,
       "srs_name": "expense management",
       "description": "A solution to monitor and track expenses, budgets, reimbursements, and financial reporting for businesses.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUCOAXEEVSh1jmpbEqxUZcvAeLXt6VlgPBY09W",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUiatWFONUkIF79zrvLSOfBgxmjsTWY6ZdV8KR",
       "imgUrl": "budget"
     }
     ,
@@ -99,14 +99,14 @@
       "id": 13,
       "srs_name": "collage management",
       "description": "A platform to manage college operations, student records, course details, and faculty information systematically.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUr0Gei8v1P0gWGH3Ny8RMkxuid2es5r6ohXOb",
+      "location": "https://utfs.io/f/dhoB0p4h6OAU3f0H97pA78Pqu2vWtSCeKQOxsLy5pN6TmG0c",
       "imgUrl": "collage"
     },
     {
       "id": 13,
       "srs_name": "hostel management",
       "description": "A tool for managing hostel allocations, resident records, payments, and maintenance requests efficiently.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUDY4PO1q6krQHnuZSexm97hJaEC0XGgb2sLPf",
+      "location": "https://utfs.io/f/dhoB0p4h6OAU3sORYApA78Pqu2vWtSCeKQOxsLy5pN6TmG0c",
       "imgUrl": "hostel"
     }
   ]

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import revealAnimation from "../../components/Reveal";
 import "../../css/component.css";
 import data from "../../data/srs.json"; // Import JSON directly
+import axios from "axios";
+import { getUserName } from "../../utils/helpers";
+import { base_url } from "../../utils/baseUrl";
 
 const Srs = () => {
   const [srsData, setSrsData] = useState([]);
@@ -11,6 +14,24 @@ const Srs = () => {
     setSrsData(data);
     revealAnimation();
   }, []);
+
+  const username =getUserName()
+
+  const createLogAndDownload = async (name, srsName) => {
+    const timestamp = new Date().toLocaleString(); // Generate a timestamp
+    const message = `${name} :: Downloaded the file for :: ${srsName} :: on ${timestamp}`; // Include timestamp in message
+
+    try {
+      // Create a log first
+      await axios.post(`${base_url}/log/add`, {
+        username: name,
+        message: message,
+      });
+      console.log("log added")
+    } catch (error) {
+      console.error("Error creating log:", error);
+    }
+  };
 
   return (
     <>
@@ -23,14 +44,15 @@ const Srs = () => {
                 <h2>{srs.srs_name}</h2>
                 <p>{srs.description}</p>
               </div>
-                <button
-                  onClick={() =>
-                    window.open(srs.location, "_blank", "noopener,noreferrer")
-                  }
-                  className="btn2"
-                >
-                  Download
-                </button>
+              <button
+                onClick={() => {
+                  createLogAndDownload(username,srs.srs_name);
+                  window.open(srs.location, "_blank", "noopener,noreferrer");
+                }}
+                className="btn2"
+              >
+                Download
+              </button>
               {/* Dynamically load images from the assets folder */}
               {srs.imgUrl && (
                 <div className="srs-img">

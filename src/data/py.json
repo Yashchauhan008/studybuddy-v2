@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "cs_name": "Basic linux commands",
+      "description": "Perform various Linux commands and configure kali Linux with Virtual Machine.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUhcyWxbCleQ81UDk3hi90JP4ATgyLoSWMNbqK",
+      "imgUrl": "desktop"
+    }
+    ,
+    {
+      "id": 2,
+      "cs_name": "NMAP",
+      "description": "Perform NMAP tool for scanning system vulnerability.",
+        "location": "https://utfs.io/f/dhoB0p4h6OAUx6AXVDy2Cy4o3uts0niNQjYF5eOqmGc1bzUa",
+      "imgUrl": "eye"
+    }
+    ,
+    {
+      "id": 3,
+      "cs_name": "Netcat and metasploit",
+      "description": "Perform Netcat and metasploit tool for scanning system vulnerability.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUKWtTaBdoAuNn0eGR7ySPjk9IYvtOh8pmETqB",
+      "imgUrl": "Netcat"
+    }
+  ]
+  
