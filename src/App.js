@@ -6,6 +6,8 @@ import Error404 from './pages/Error404';
 import AuthRoutes from './routes/AuthRoutes';
 import { useKindeAuth } from '@kinde-oss/kinde-auth-react';
 import { getMyAuth } from './utils/helpers';
+import { Analytics } from '@vercel/analytics/react';
+
 
 const App = () => {
   const { isAuthenticated } = useKindeAuth();
@@ -14,10 +16,13 @@ const App = () => {
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
 
   return (
-      <Routes>
+     <>
+     <Routes>
         <Route path='/*' element={<LocalRoutes />} />
         {isAuthenticated ? <Route path='/auth/*' element={<AuthRoutes />} /> : <Route path='/auth' element={<Error404 />} />}
       </Routes>
+      <Analytics />
+     </>
   );
 }
 
