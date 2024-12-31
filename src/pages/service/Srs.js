@@ -4,10 +4,10 @@ import "../../css/component.css";
 import data from "../../data/srs.json"; // Import JSON directly
 import axios from "axios";
 import { getUserName } from "../../utils/helpers";
-import { base_url } from "../../utils/baseUrl";
 
 const Srs = () => {
   const [srsData, setSrsData] = useState([]);
+  const base_url = process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
     // Set the imported data directly

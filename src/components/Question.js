@@ -3,7 +3,6 @@ import CodeEditor from "../components/CodeEditor";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { base_url } from "../utils/baseUrl";
 
 const Question = ({ index, question, isCompleted, handleCheckboxChange }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -11,6 +10,7 @@ const Question = ({ index, question, isCompleted, handleCheckboxChange }) => {
   const [codes, setCodes] = useState(question.codes);
   const { username, subjectName, subjectId } = useParams();
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
+  const base_url = process.env.REACT_APP_BASE_URL;
 
   const toggleExpansion = () => {
     setIsExpanded(!isExpanded);

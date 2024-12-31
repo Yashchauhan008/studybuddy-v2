@@ -32,13 +32,15 @@ import { getMyAuth, getUserName, setMyAuth } from "../utils/helpers";
 const ShuffleHero = () => {
   const navigate = useNavigate();
 
+  const base_url = process.env.REACT_APP_BASE_URL;
+
   // const { user } = useKindeAuth/();
   const { login, register, user, isAuthenticated, logout } = useKindeAuth();
 
   useEffect(() => {
     //just to start server earier when user is on landing page
     const fetchData = async () => {
-      const response = await fetch("https://studybuddy-oo8i.onrender.com/");
+      const response = await fetch(`${base_url}`);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }

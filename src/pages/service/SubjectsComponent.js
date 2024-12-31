@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import sample from '../../assets/sample.jpeg';
 import gsap from 'gsap';
-import { base_url } from "../../utils/baseUrl";
+// import { base_url } from "../../utils/baseUrl";
 import Loader from "../../components/Loader";
 import revealAnimation from "../../components/Reveal";
 import BackButton from '../../components/BackButton';
@@ -15,7 +15,8 @@ const SubjectsComponent = () => {
   const [loading, setLoading] = useState(true);
   const [addSub, setAddsub] = useState(false);
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
-  
+  const base_url = process.env.REACT_APP_BASE_URL;
+
   // Form states for adding new subject
   const [subjectName, setSubjectName] = useState("");
   const [subjectDescription, setSubjectDescription] = useState("");

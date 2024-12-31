@@ -3,7 +3,6 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "../css/question.css";
 import Question from "../components/Question";
-import { base_url } from "../utils/baseUrl";
 import Loader from "../components/Loader";
 import BackButton from "../components/BackButton";
 import gsap from "gsap"; // Import GSAP
@@ -26,6 +25,7 @@ const Questions = () => {
     isPrivate: false,
   });
   const username = getUserName()
+  const base_url = process.env.REACT_APP_BASE_URL;
 
   
   useEffect(() => {

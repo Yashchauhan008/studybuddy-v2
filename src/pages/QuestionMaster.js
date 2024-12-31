@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { base_url } from "../utils/baseUrl";
 import CodeEditor from "../components/CodeEditor";
 import Loader from "../components/Loader";
 import '../css/questionMaster.css'
@@ -11,6 +10,8 @@ const QuestionMaster = () => {
   const [questionData, setQuestionData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const base_url = process.env.REACT_APP_BASE_URL;
+
 
   const [newCode, setNewCode] = useState({
     description: "",

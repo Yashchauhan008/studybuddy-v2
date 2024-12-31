@@ -4,7 +4,6 @@ import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import { useNavigate, useParams } from "react-router-dom";
 import sample from "../assets/sample.jpeg";
 import heart from "../assets/heart.png";
-import { base_url } from "../utils/baseUrl";
 import "../css/home.css";
 import Loader from "../components/Loader";
 import "../index.css";
@@ -34,6 +33,8 @@ const Home = () => {
     workplace: "",
   });
   const navigate = useNavigate();
+  const base_url = process.env.REACT_APP_BASE_URL;
+
 
   useEffect(() => {
 

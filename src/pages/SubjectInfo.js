@@ -5,7 +5,6 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../css/subjectinfo.css";
-import { base_url } from "../utils/baseUrl";
 import Loader from "../components/Loader";
 import BackButton from "../components/BackButton";
 
@@ -18,6 +17,9 @@ const SubjectInfo = () => {
   const [editedSubject, setEditedSubject] = useState(null);
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
   const navigate = useNavigate();
+
+  const base_url = process.env.REACT_APP_BASE_URL;
+
 
   useLayoutEffect(() => {
     const fetchSubject = async () => {
