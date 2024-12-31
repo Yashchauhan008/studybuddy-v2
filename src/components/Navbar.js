@@ -109,7 +109,6 @@ const Navbar = () => {
             <button
               className="btn2"
               onClick={() => {
-                menuToggle();
                 navigate("/auth/admin/logs");
               }}
             >

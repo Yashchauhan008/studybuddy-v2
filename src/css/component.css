@@ -604,7 +604,7 @@
 .log-card >.Logout{
   background-color: #FF6961;
 }
-.log-card >.explore{
+.log-card >.Explore{
   background-color: #CDB5E4;
 }
 .log-card >.Register{
@@ -691,7 +691,9 @@
     /* background-color: lightcoral; */
     position: absolute;
     left:20px;
+    /* text-align-last: left; */
     /* font-size: 15px; */
+    text-wrap: nowrap;
     font-weight: 300;
     top: 20px;
     /* display: none; */

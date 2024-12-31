@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/component.css";
+import Loader from "./Loader";
 
 const DisplayLogs = () => {
   const [logs, setLogs] = useState([]); // State to store all logs
@@ -67,6 +68,10 @@ const DisplayLogs = () => {
     fetchLogs();
   }, []);
 
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className="home">
       <h1 className="reveal">Logs</h1>
@@ -90,9 +95,6 @@ const DisplayLogs = () => {
         </select>
       </div>
 
-      {loading ? (
-        <p>Loading logs...</p>
-      ) : (
         <div className="log-cards">
 
           {filteredLogs.length > 0 ? (
@@ -111,7 +113,6 @@ const DisplayLogs = () => {
           )}
           {/* </tbody> */}
         </div>
-      )}
     </div>
   );
 };
