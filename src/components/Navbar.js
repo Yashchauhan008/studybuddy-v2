@@ -38,8 +38,6 @@ const Navbar = () => {
     }
   }
 
-  
-
   useEffect(() => {
     if (menuTGL) {
       const tl = gsap.timeline();
@@ -106,14 +104,16 @@ const Navbar = () => {
         </div>
         <div className="rnav">
           <div className="nav-btn">
-            <button
-              className="btn2"
-              onClick={() => {
-                navigate("/auth/admin/logs");
-              }}
-            >
-              logs
-            </button>
+            {isAdmin && (
+              <button
+                className="btn2"
+                onClick={() => {
+                  navigate("/auth/admin/logs");
+                }}
+              >
+                logs
+              </button>
+            )}
             <button className="btn2" onClick={() => menuToggle()}>
               menu
             </button>
