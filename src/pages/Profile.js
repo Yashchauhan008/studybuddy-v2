@@ -4,7 +4,7 @@ import Loader from "../components/Loader";
 import "../css/profile.css";
 
 const Profile = () => {
-  const { user,logout } = useKindeAuth();
+  const { user, logout } = useKindeAuth();
 
   if (!user) {
     return <Loader />;
@@ -13,7 +13,7 @@ const Profile = () => {
   return (
     <>
       <div className="profile">
-        <img src={user.picture} />
+        <img src={user.picture} alt="Profile" />
         <div className="prof-detail">
           <h1>
             {user.given_name}&nbsp;{user.family_name}
@@ -21,8 +21,11 @@ const Profile = () => {
           <p>{user.email}</p>
         </div>
       </div>
-      <div style={{ textAlign: "center" }} >
-        <button className="btn2" onClick={logout}>
+      <div style={{ textAlign: "center" }}>
+        <button
+          className="btn2"
+          onClick={() => logout({ redirectUri: "https://studybuddy-v2.vercel.app" })}
+        >
           log out
         </button>
       </div>
