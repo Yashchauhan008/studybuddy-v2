@@ -133,16 +133,18 @@
         height: 500px;
         margin: 0;
         width: 80vw;
-        /* overflow: hidden; */
         transform: translateY(-80px);
         background-color: transparent;
         color: white;
         font-weight: 100;
+        display: flex;
+        align-items: center;justify-content: center;
+        flex-direction: column;
     }
     .sub-data h1{
         /* position: absolute; */
-        color: black;
-        background-color: rgb(68, 251, 251);
+        color: white;
+        background-color: #121212;
         border-radius:20px;
         transform: translateY(-40px);
         top: 0;
@@ -159,8 +161,9 @@
         padding: 0;
         width: 100%;
         overflow-y: auto;
-        font-size: 17px;
+        font-size: 15px;
         text-align: justify;
+        font-weight: 200;
     }
     .sub-data img{
         position: absolute;
@@ -172,11 +175,9 @@
     }
     .sub-data h2{
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
+        bottom: 30px;
         text-align: center;
-        padding: 0;
+        padding: 0 10px;
         background-color: #A2F7FF;
         transform: translateY(10px);
         border-radius: 50px;

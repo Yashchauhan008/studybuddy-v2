@@ -163,7 +163,7 @@ const SubjectInfo = () => {
               <h1 className="reveal">{subject.name}</h1>
               <img src={subject.imgUrl} alt={subject.name} />
               <p>{subject.description}</p>
-              <h2>Total questions: {subject.question}</h2>
+              <h2>questions: {subject.question}</h2>
               {subject.cheatsheet && (
                 <>
                   <h3>Download our exclusive cheatsheet for {subject.name}</h3>
