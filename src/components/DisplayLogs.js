@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import "../css/component.css";
 
 const DisplayLogs = () => {
   const [logs, setLogs] = useState([]); // State to store all logs
   const [filteredLogs, setFilteredLogs] = useState([]); // State to store filtered logs
-  const [username, setUsername] = useState(''); // State for username input
-  const [action, setAction] = useState(''); // State for selected action
+  const [username, setUsername] = useState(""); // State for username input
+  const [action, setAction] = useState(""); // State for selected action
   const [loading, setLoading] = useState(false); // Loading state
   const [error, setError] = useState(null); // Error state
   const base_url = process.env.REACT_APP_BASE_URL;
@@ -18,7 +18,7 @@ const DisplayLogs = () => {
     try {
       const response = await fetch(`${base_url}/log/all`);
       if (!response.ok) {
-        throw new Error('Failed to fetch logs');
+        throw new Error("Failed to fetch logs");
       }
       const data = await response.json();
       setLogs(data.logs); // Store all logs
@@ -35,13 +35,13 @@ const DisplayLogs = () => {
     let filtered = logs;
 
     if (username) {
-      filtered = filtered.filter(log =>
+      filtered = filtered.filter((log) =>
         log.username.toLowerCase().includes(username.toLowerCase())
       );
     }
 
     if (action) {
-      filtered = filtered.filter(log => log.action === action);
+      filtered = filtered.filter((log) => log.action === action);
     }
 
     setFilteredLogs(filtered);
@@ -69,7 +69,7 @@ const DisplayLogs = () => {
 
   return (
     <div className="home">
-      <h1 className='reveal'>Logs</h1>
+      <h1 className="reveal">Logs</h1>
 
       {error && <p className="error">{error}</p>}
 
@@ -80,7 +80,7 @@ const DisplayLogs = () => {
           value={username}
           onChange={handleUsernameChange}
         />
-        <select value={action} onChange={handleActionChange}>
+        <select className="action-dropdown" value={action} onChange={handleActionChange}>
           <option value="">Filter by action</option>
           <option value="Download">Download</option>
           <option value="Register">Register</option>
@@ -93,32 +93,24 @@ const DisplayLogs = () => {
       {loading ? (
         <p>Loading logs...</p>
       ) : (
-        <table className="logs-table">
-          <thead>
+        <div className="log-cards">
+
+          {filteredLogs.length > 0 ? (
+            filteredLogs.map((log, index) => (
+              <div className="log-card">
+                <h2>{log.username}</h2>
+                <h3>{log.message}</h3>
+                <div className={`${log.action} action`}>{log.action}</div>
+                <h4>{new Date(log.timestamp).toLocaleString()}</h4>
+              </div>
+            ))
+          ) : (
             <tr>
-              <th>Username</th>
-              <th>Message</th>
-              <th>Action</th>
-              <th>Timestamp</th>
+              <td colSpan="subject-card">No logs found</td>
             </tr>
-          </thead>
-          <tbody>
-            {filteredLogs.length > 0 ? (
-              filteredLogs.map((log, index) => (
-                <tr key={index}>
-                  <td>{log.username}</td>
-                  <td>{log.message}</td>
-                  <td>{log.action}</td>
-                  <td>{new Date(log.timestamp).toLocaleString()}</td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="4">No logs found</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
+          )}
+          {/* </tbody> */}
+        </div>
       )}
     </div>
   );

@@ -19,7 +19,7 @@ const Srs = () => {
   const username =getUserName()
   const createLogAndDownload = async (name, srsName) => {
     const timestamp = new Date().toLocaleString(); // Generate a timestamp
-    const message = `${name} :: Downloaded the file for :: ${srsName} :: on ${timestamp}`; // Include timestamp in message
+    const message = `:: Downloaded ${srsName} ::`; // Include timestamp in message
     const action = "Download"
     try {
       // Create a log first

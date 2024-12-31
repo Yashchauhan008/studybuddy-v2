@@ -19,7 +19,7 @@ const CyberSecurity = () => {
   
   const createLogAndDownload = async (name, csName) => {
     const timestamp = new Date().toLocaleString(); // Generate a timestamp
-    const message = `${name} :: Downloaded the file for :: ${csName} :: on ${timestamp}`; // Include timestamp in message
+    const message = `:: Downloaded ${csName} ::`; // Include timestamp in message
 
     try {
       // Create a log first

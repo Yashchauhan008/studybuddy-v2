@@ -16,7 +16,7 @@ const Profile = () => {
 
   const createLogForLogout = async (name) => {
     const timestamp = new Date().toLocaleString(); // Generate a timestamp
-    const message = `${name} :: Logout :: on ${timestamp}`; // Include timestamp in message
+    const message = `:: Logout ::`; // Include timestamp in message
     const action = "Logout"
     try {
       // Create a log first

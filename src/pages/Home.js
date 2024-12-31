@@ -37,7 +37,7 @@ const Home = () => {
 
   const createLogForRegister = async (name) => {
     const timestamp = new Date().toLocaleString(); // Generate a timestamp
-    const message = `${name} :: Registered :: on ${timestamp}`; // Include timestamp in message
+    const message = `:: Registered ::`; // Include timestamp in message
     const action = "Register"
     try {
       // Create a log first
@@ -54,7 +54,7 @@ const Home = () => {
 
   const createLogForLogin = async (name) => {
     const timestamp = new Date().toLocaleString(); // Generate a timestamp
-    const message = `${name} :: Login :: on ${timestamp}`; // Include timestamp in message
+    const message = `:: Login ::`; // Include timestamp in message
     const action = "Login"
     try {
       // Create a log first

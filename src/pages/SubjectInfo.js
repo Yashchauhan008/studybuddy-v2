@@ -23,8 +23,8 @@ const SubjectInfo = () => {
 
   const createLogForExplore = async (name, subject) => {
     const timestamp = new Date().toLocaleString(); // Generate a timestamp
-    const message = `${name} :: exploreed :: ${subject}  :: on ${timestamp}`; // Include timestamp in message
-    const action = "explore";
+    const message = `:: ${subject} ::`; // Include timestamp in message
+    const action = "Explore";
     try {
       // Create a log first
       await axios.post(`${base_url}/log/add`, {
