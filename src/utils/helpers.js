@@ -1,11 +1,6 @@
 // to store username---------------------------------
 export const setUserName=(username)=>{
-    try{
         localStorage.setItem("username",username);
-        console.log("username stored to LS");
-    }catch{
-        console.log("username is not stored in LS");
-    }
 }
 
 export const getUserName = () =>{

@@ -1,4 +1,4 @@
-import gsap from 'gsap';
+import gsap from "gsap";
 import SplitType from "split-type";
 import React, { useLayoutEffect, useState, useEffect } from "react";
 import axios from "axios";
@@ -7,19 +7,36 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "../css/subjectinfo.css";
 import Loader from "../components/Loader";
 import BackButton from "../components/BackButton";
+import { getUserName } from "../utils/helpers";
 
 const SubjectInfo = () => {
   const { user } = useAuth0();
-  const {subjectName } = useParams();
+  const { subjectName } = useParams();
   const [subject, setSubject] = useState(null);
   const [error, setError] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedSubject, setEditedSubject] = useState(null);
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
   const navigate = useNavigate();
-
   const base_url = process.env.REACT_APP_BASE_URL;
+  const username = getUserName();
 
+  const createLogForExplore = async (name, subject) => {
+    const timestamp = new Date().toLocaleString(); // Generate a timestamp
+    const message = `${name} :: exploreed :: ${subject}  :: on ${timestamp}`; // Include timestamp in message
+    const action = "explore";
+    try {
+      // Create a log first
+      await axios.post(`${base_url}/log/add`, {
+        username: name,
+        message: message,
+        action: action,
+      });
+      console.log("log added");
+    } catch (error) {
+      console.error("Error creating log:", error);
+    }
+  };
 
   useLayoutEffect(() => {
     const fetchSubject = async () => {
@@ -29,9 +46,8 @@ const SubjectInfo = () => {
         );
         setSubject(response.data);
         setEditedSubject(response.data);
-        
+
         // GSAP animation after subject data is fetched
-      
       } catch (err) {
         console.error("Error fetching subject:", err);
         setError("Failed to fetch subject. Please try again later.");
@@ -45,24 +61,24 @@ const SubjectInfo = () => {
   useEffect(() => {
     if (subject) {
       // SplitType text reveal animation
-      const splitText = new SplitType('.reveal', { types: 'lines, words' });
-      
+      const splitText = new SplitType(".reveal", { types: "lines, words" });
+
       // Now apply GSAP animation to the split text
       gsap.fromTo(
-        splitText.words, 
-        { opacity: 0, y: 50 }, 
-        { opacity: 1, y: 0, duration: 1, stagger: 0.05, ease: 'power3.out' }
+        splitText.words,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1, stagger: 0.05, ease: "power3.out" }
       );
 
       gsap.fromTo(
-        '.sub-data', // Target all elements with class "sub-data"
+        ".sub-data", // Target all elements with class "sub-data"
         { y: 100, opacity: 0 },
-        { 
-          y: 0, 
-          opacity: 1, 
+        {
+          y: 0,
+          opacity: 1,
           duration: 1.5, // Animation duration
-          ease: 'power3.out', 
-          stagger: 0.3 // If you have multiple elements in .sub-data
+          ease: "power3.out",
+          stagger: 0.3, // If you have multiple elements in .sub-data
         }
       );
     }
@@ -156,7 +172,9 @@ const SubjectInfo = () => {
               )}
               {isAdmin ? (
                 <>
-                  <button className="btn2" onClick={handleEdit}>Edit</button>
+                  <button className="btn2" onClick={handleEdit}>
+                    Edit
+                  </button>
                 </>
               ) : null}
             </>
@@ -164,9 +182,10 @@ const SubjectInfo = () => {
         </div>
         <button
           className="startprep"
-          onClick={() =>
-            navigate(`/auth/subjects/${subjectName}/${subject._id}`)
-          }
+          onClick={() => {
+            createLogForExplore(username, subjectName);
+            navigate(`/auth/subjects/${subjectName}/${subject._id}`);
+          }}
         >
           <span className="button-content">Start Preparation</span>
         </button>

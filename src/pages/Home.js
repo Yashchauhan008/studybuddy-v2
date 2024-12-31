@@ -35,6 +35,39 @@ const Home = () => {
   const navigate = useNavigate();
   const base_url = process.env.REACT_APP_BASE_URL;
 
+  const createLogForRegister = async (name) => {
+    const timestamp = new Date().toLocaleString(); // Generate a timestamp
+    const message = `${name} :: Registered :: on ${timestamp}`; // Include timestamp in message
+    const action = "Register"
+    try {
+      // Create a log first
+      await axios.post(`${base_url}/log/add`, {
+        username: name,
+        message: message,
+        action: action,
+      });
+      console.log("log added")
+    } catch (error) {
+      console.error("Error creating log:", error);
+    }
+  };
+
+  const createLogForLogin = async (name) => {
+    const timestamp = new Date().toLocaleString(); // Generate a timestamp
+    const message = `${name} :: Login :: on ${timestamp}`; // Include timestamp in message
+    const action = "Login"
+    try {
+      // Create a log first
+      await axios.post(`${base_url}/log/add`, {
+        username: name,
+        message: message,
+        action: action,
+      });
+      console.log("log added")
+    } catch (error) {
+      console.error("Error creating log:", error);
+    }
+  };
 
   useEffect(() => {
 
@@ -48,9 +81,8 @@ const Home = () => {
         const userFound = data.find((u) => u.email === user.email);
 
         if (userFound) {
+          createLogForLogin(userFound.username)
           setExistingUser(userFound);
-          // =================local user logic for url====================
-          console.log(userFound.username);
           setUserName(userFound.username);
           const localusername = getUserName();
           sessionStorage.setItem("isAdmin", userFound.role === "admin");
@@ -124,6 +156,7 @@ const Home = () => {
 
       if (response.ok) {
         setUserName(username);
+        createLogForRegister(username)
         navigate(`/auth/subjects`);
       } else {
         if (responseData.message === "Username already exists") {

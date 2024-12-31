@@ -15,17 +15,18 @@ const Srs = () => {
     revealAnimation();
   }, []);
 
+  
   const username =getUserName()
-
   const createLogAndDownload = async (name, srsName) => {
     const timestamp = new Date().toLocaleString(); // Generate a timestamp
     const message = `${name} :: Downloaded the file for :: ${srsName} :: on ${timestamp}`; // Include timestamp in message
-
+    const action = "Download"
     try {
       // Create a log first
       await axios.post(`${base_url}/log/add`, {
         username: name,
         message: message,
+        action: action,
       });
       console.log("log added")
     } catch (error) {

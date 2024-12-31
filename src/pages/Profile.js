@@ -2,13 +2,34 @@ import React from "react";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import Loader from "../components/Loader";
 import "../css/profile.css";
+import axios from "axios";
+import { getUserName } from "../utils/helpers";
 
 const Profile = () => {
   const { user, logout } = useKindeAuth();
+  const username = getUserName()
+  const base_url = process.env.REACT_APP_BASE_URL;
 
   if (!user) {
     return <Loader />;
   }
+
+  const createLogForLogout = async (name) => {
+    const timestamp = new Date().toLocaleString(); // Generate a timestamp
+    const message = `${name} :: Logout :: on ${timestamp}`; // Include timestamp in message
+    const action = "Logout"
+    try {
+      // Create a log first
+      await axios.post(`${base_url}/log/add`, {
+        username: name,
+        message: message,
+        action: action,
+      });
+      console.log("log added")
+    } catch (error) {
+      console.error("Error creating log:", error);
+    }
+  };
 
   return (
     <>
@@ -24,7 +45,10 @@ const Profile = () => {
       <div style={{ textAlign: "center" }}>
         <button
           className="btn2"
-          onClick={() => logout({ redirectUri: "https://studybuddy-v2.vercel.app" })}
+          onClick={() =>{
+            createLogForLogout(username)
+            logout({ redirectUri: "https://studybuddy-v2.vercel.app" })}
+          } 
         >
           log out
         </button>

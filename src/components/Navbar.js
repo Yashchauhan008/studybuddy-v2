@@ -20,7 +20,6 @@ import dm from "../assets/dm.jpeg";
 import srs from "../assets/srs.jpeg";
 import ml from "../assets/ml.jpeg";
 
-
 const Navbar = () => {
   const { user, logout } = useKindeAuth();
   const [menuTGL, setMenuTGL] = useState(false);
@@ -28,6 +27,7 @@ const Navbar = () => {
   const [hoveredImage, setHoveredImage] = useState(base);
   const [isImageChanging, setIsImageChanging] = useState(false); // Animation state
   const navigate = useNavigate();
+  const isAdmin = sessionStorage.getItem("isAdmin") === "true";
 
   function menuToggle() {
     if (!menuTGL) {
@@ -37,6 +37,8 @@ const Navbar = () => {
       setMenuTGL(false);
     }
   }
+
+  
 
   useEffect(() => {
     if (menuTGL) {
@@ -104,14 +106,21 @@ const Navbar = () => {
         </div>
         <div className="rnav">
           <div className="nav-btn">
+            <button
+              className="btn2"
+              onClick={() => {
+                menuToggle();
+                navigate("/auth/admin/logs");
+              }}
+            >
+              logs
+            </button>
             <button className="btn2" onClick={() => menuToggle()}>
               menu
             </button>
             {isVisible && (
               <div className="menu-cnt">
-                <div className="menu-cnt-top">
-                  your resources
-                </div>
+                <div className="menu-cnt-top">your resources</div>
                 <div className="menu-cnt-left">
                   {/* <button
                     className="menu-item"
@@ -123,56 +132,80 @@ const Navbar = () => {
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(base)}
-                    onClick={()=>{navigate("/auth/subjects");setMenuTGL(!menuTGL)}}
+                    onClick={() => {
+                      navigate("/auth/subjects");
+                      setMenuTGL(!menuTGL);
+                    }}
                   >
                     <span>subjects</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(srs)}
-                    onClick={()=>{navigate("/auth/srs");setMenuTGL(!menuTGL)}}
+                    onClick={() => {
+                      navigate("/auth/srs");
+                      setMenuTGL(!menuTGL);
+                    }}
                   >
                     <span>SRS</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(cs)}
-                    onClick={()=>{navigate("/auth/cyber-Security");setMenuTGL(!menuTGL)}}
+                    onClick={() => {
+                      navigate("/auth/cyber-Security");
+                      setMenuTGL(!menuTGL);
+                    }}
                   >
                     <span>cyber security</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(ml)}
-                    onClick={()=>{navigate("/auth/machine-learning");setMenuTGL(!menuTGL)}}
+                    onClick={() => {
+                      navigate("/auth/machine-learning");
+                      setMenuTGL(!menuTGL);
+                    }}
                   >
                     <span>machine learning</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(py)}
-                    onClick={()=>{navigate("/auth/python");setMenuTGL(!menuTGL)}}
+                    onClick={() => {
+                      navigate("/auth/python");
+                      setMenuTGL(!menuTGL);
+                    }}
                   >
                     <span>python</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(cn)}
-                    onClick={()=>{navigate("/auth/computer-networks");setMenuTGL(!menuTGL)}}
+                    onClick={() => {
+                      navigate("/auth/computer-networks");
+                      setMenuTGL(!menuTGL);
+                    }}
                   >
                     <span>computer networks</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(dm)}
-                    onClick={()=>{navigate("/auth/data-mining");setMenuTGL(!menuTGL)}}
+                    onClick={() => {
+                      navigate("/auth/data-mining");
+                      setMenuTGL(!menuTGL);
+                    }}
                   >
                     <span>data mining</span>
                   </button>
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(mern)}
-                    onClick={()=>{navigate("/auth/mern-projects");setMenuTGL(!menuTGL)}}
+                    onClick={() => {
+                      navigate("/auth/mern-projects");
+                      setMenuTGL(!menuTGL);
+                    }}
                   >
                     <span>mern projects</span>
                   </button>

@@ -16,6 +16,7 @@ import ComputerNetworks from "../pages/service/ComputerNetworks";
 import DataMining from "../pages/service/DataMining";
 import MernProjects from "../pages/service/MernProjects";
 import SubjectsComponent from "../pages/service/SubjectsComponent";
+import DisplayLogs from "../components/DisplayLogs";
 
 const WithLayout = ({ children, showLayout }) => {
   return showLayout ? (
@@ -132,6 +133,14 @@ const AuthRoutes = () => {
         element={
           <WithLayout showLayout={true}>
             <MernProjects />
+          </WithLayout>
+        }
+      />
+      <Route
+        path="/admin/logs"
+        element={
+          <WithLayout showLayout={true}>
+            <DisplayLogs />
           </WithLayout>
         }
       />
