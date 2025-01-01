@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "ml_name": "1. data analysis",
+      "description": "A hands-on guide to data manipulation, analysis, and cleaning using Pandas and Python.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUDnMwniq6krQHnuZSexm97hJaEC0XGgb2sLPf",
+      "imgUrl": "ml"
+    },
+    {
+      "id": 2,
+      "ml_name": "2. Linear Regression with Datasets",
+      "description": "Practical lab on linear regression modeling, training, testing, and visualization using real-world datasets.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAU6sdRf4LB9GkUw4QMjpO8criqYafVyuoStLTX",
+      "imgUrl": "ml"
+    },
+    {
+      "id": 3,
+      "ml_name": "3. Preprocessing and Linear Regression",
+      "description": "Learn preprocessing, splitting data, encoding, and building a linear regression model with predictions",
+      "location": "https://utfs.io/f/dhoB0p4h6OAU6sdRf4LB9GkUw4QMjpO8criqYafVyuoStLTX",
+      "imgUrl": "ml"
+    },
+    {
+      "id": 4,
+      "ml_name": "4. Polynomial Regression",
+      "description": "Predicting salaries using linear and polynomial regression, visualizing results, and evaluating model performance.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUfsYGNFW4z36kJ5uLoqtaP9KpMYeZs1mhdiWF",
+      "imgUrl": "ml"
+    },
+    {
+      "id": 5,
+      "ml_name": "5. SVR and Decision Trees",
+      "description": "Hands-on exercises using SVR kernels and Decision Trees for regression and classification tasks.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUPvR9aDyR8cA2uTwDIZfhvbm3xHMVsriXzPeC",
+      "imgUrl": "ml"
+    }
+  ]
+  

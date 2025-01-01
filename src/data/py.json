@@ -1,26 +1,94 @@
 [
     {
       "id": 1,
-      "cs_name": "Basic linux commands",
-      "description": "Perform various Linux commands and configure kali Linux with Virtual Machine.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUhcyWxbCleQ81UDk3hi90JP4ATgyLoSWMNbqK",
-      "imgUrl": "desktop"
-    }
-    ,
+      "py_name": "lab 1",
+      "description": "basic python lab tasks",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUq7HLORSxRpKTXAo7H1GNQO26UkEYzvfjgnsl",
+      "imgUrl": "python"
+    },
     {
       "id": 2,
-      "cs_name": "NMAP",
-      "description": "Perform NMAP tool for scanning system vulnerability.",
-        "location": "https://utfs.io/f/dhoB0p4h6OAUx6AXVDy2Cy4o3uts0niNQjYF5eOqmGc1bzUa",
-      "imgUrl": "eye"
-    }
-    ,
+      "py_name": "lab 2",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
     {
       "id": 3,
-      "cs_name": "Netcat and metasploit",
-      "description": "Perform Netcat and metasploit tool for scanning system vulnerability.",
-      "location": "https://utfs.io/f/dhoB0p4h6OAUKWtTaBdoAuNn0eGR7ySPjk9IYvtOh8pmETqB",
-      "imgUrl": "Netcat"
+      "py_name": "lab 3",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 4,
+      "py_name": "lab 4",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 5,
+      "py_name": "lab 5",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 6,
+      "py_name": "lab 6",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 7,
+      "py_name": "lab 7",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 8,
+      "py_name": "lab 8",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 9,
+      "py_name": "lab 9",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 10,
+      "py_name": "lab 10",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 11,
+      "py_name": "lab 11",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 12,
+      "py_name": "lab 12",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
+    },
+    {
+      "id": 13,
+      "py_name": "lab 13",
+      "description": "basic python lab tasks",
+      "location": "",
+      "imgUrl": "python"
     }
   ]
   

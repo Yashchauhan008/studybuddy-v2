@@ -75,7 +75,7 @@ const ShuffleHero = () => {
       <nav className="navbar">
         <div className="lnav">
           <img src={logo} />
-          <h1 className="reveal">study buddy</h1>
+          <h1 className="reveal">Quick Labs</h1>
         </div>
         <div className="rnav">
           {/* <div className="nav-btn">

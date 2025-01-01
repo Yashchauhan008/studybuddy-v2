@@ -100,7 +100,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="lnav">
           <img src={logo} alt="logo" />
-          <h1 onClick={() => navigate("/auth")}>study buddy</h1>
+          <h1 onClick={() => navigate("/auth")}>quick labs</h1>
         </div>
         <div className="rnav">
           <div className="nav-btn">

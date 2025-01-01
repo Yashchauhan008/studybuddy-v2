@@ -1,0 +1,94 @@
+[
+    {
+      "id": 1,
+      "cn_name": "lab 1",
+      "description": "Study of basic networking commands and IP configuration.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUPvR9aDyR8cA2uTwDIZfhvbm3xHMVsriXzPeC",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 2,
+      "cn_name": "lab 2",
+      "description": "Study of different types of network cables & connectors and crimping a LAN.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUqwRVm6SxRpKTXAo7H1GNQO26UkEYzvfjgnsl",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 3,
+      "cn_name": "lab 3",
+      "description": "Study of different network devices in detail.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUMAQy7hicG72d0XumszLWw5lSgYUxpTIePRfy",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 4,
+      "cn_name": "lab 4",
+      "description": "Installation of Network Simulator (Packet Tracer) and Implement different LAN topologies.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUteMNwS9bH8X3uPhrIM7pOESLQqYJZbTiosnf",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 5,
+      "cn_name": "lab 5",
+      "description": "Study the concept of VLAN using packet tracer.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUCojFwWvVSh1jmpbEqxUZcvAeLXt6VlgPBY09",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 6,
+      "cn_name": "lab 6",
+      "description": "Study the application layer protocol DNS, DHCP, FTP.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAU4MHtmJuEG2yRlm14oZ9ejkaKOItg3NunbYcX",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 7,
+      "cn_name": "lab 7",
+      "description": "Study Client-Server Socket programming - TCP & UDP.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUVZZzU2dROS8qQD04UxgcjdXTwMJHf17YoKmI",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 8,
+      "cn_name": "lab 8",
+      "description": "Study Packet capture and header analysis by Wireshark (HTTP, TCP, UDP, IP, etc.).",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUTb1xp0fOCS9h6Ng4jonTVbB17P30lEUdxpRk",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 9,
+      "cn_name": "lab 9",
+      "description": "Study of IP Addressing and sub-netting.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUq9ym3wSxRpKTXAo7H1GNQO26UkEYzvfjgnsl",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 10,
+      "cn_name": "lab 10",
+      "description": "Study the concept of routing using packet tracer.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAU9tF4eD5v5EsANkq8WFxoD2cm0jMBdbXrgYfy",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 11,
+      "cn_name": "lab 11",
+      "description": "Study the concept of routing using packet tracer.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAU9tF4eD5v5EsANkq8WFxoD2cm0jMBdbXrgYfy",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 12,
+      "cn_name": "lab 12",
+      "description": "To develop network using distance vector routing protocol and link state routing protocol.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUSNtGL6xjktsEm05YfKAZxa2CpvSIG8beBJ1P",
+      "imgUrl": "cn"
+    },
+    {
+      "id": 13,
+      "cn_name": "lab 13",
+      "description": "Study & Survey of Institute organization network infrastructure.",
+      "location": "https://utfs.io/f/dhoB0p4h6OAUSrbAZrxjktsEm05YfKAZxa2CpvSIG8beBJ1P",
+      "imgUrl": "cn"
+    }
+  ]
+  
