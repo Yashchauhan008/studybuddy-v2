@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from "react";
 import revealAnimation from "../../components/Reveal";
+import PopCard from "../../components/PopCards";
 import "../../css/component.css";
-import data from "../../data/py.json"; // Import JSON directly
+import data from "../../data/py.json";
 import axios from "axios";
 import { getUserName } from "../../utils/helpers";
 
 const Python = () => {
   const [pyData, setPyData] = useState([]);
+  const [showPopCard, setShowPopCard] = useState(false);
   const base_url = process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
-    // Set the imported data directly
     setPyData(data);
     revealAnimation();
   }, []);
 
   const username = getUserName();
-  const createLogAndDownload = async (name, PyName) => {
-    const timestamp = new Date().toLocaleString(); // Generate a timestamp
-    const message = `:: Downloaded ${PyName} ::`; // Include timestamp in message
+
+  const createLogAndDownload = async (name, pyName) => {
+    const timestamp = new Date().toLocaleString();
+    const message = `:: Downloaded ${pyName} ::`;
     const action = "Download";
     try {
-      // Create a log first
       await axios.post(`${base_url}/log/add`, {
         username: name,
         message: message,
@@ -32,10 +33,21 @@ const Python = () => {
       console.error("Error creating log:", error);
     }
   };
+
+  const handleDownloadClick = (pyName) => {
+    createLogAndDownload(username, pyName);
+    setShowPopCard(true);
+  };
+
+  const handleClosePopCard = () => {
+    setShowPopCard(false);
+  };
+
   return (
     <>
       <div className="home">
         <h1 className="reveal">Python</h1>
+        {showPopCard && <PopCard onClose={handleClosePopCard} />}
         <div className="display-cards">
           {pyData.map((py) => (
             <div key={py.id} className="srs-card">
@@ -45,14 +57,13 @@ const Python = () => {
               </div>
               <button
                 onClick={() => {
-                  createLogAndDownload(username,py.py_name);
+                  handleDownloadClick(py.py_name);
                   window.open(py.location, "_blank", "noopener,noreferrer");
                 }}
                 className="btn2"
               >
                 Download
               </button>
-              {/* Dynamically load images from the assets folder */}
               {py.imgUrl && (
                 <div className="srs-img">
                   <img

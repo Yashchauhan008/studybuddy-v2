@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from "react";
 import revealAnimation from "../../components/Reveal";
+import PopCard from "../../components/PopCards";
 import "../../css/component.css";
-import data from "../../data/ml.json"; // Import JSON directly
+import data from "../../data/ml.json";
 import axios from "axios";
 import { getUserName } from "../../utils/helpers";
 
 const MachineLearning = () => {
-    const [mlData, setMlData] = useState([]);
+  const [mlData, setMlData] = useState([]);
+  const [showPopCard, setShowPopCard] = useState(false);
   const base_url = process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
-    // Set the imported data directly
     setMlData(data);
     revealAnimation();
   }, []);
 
   const username = getUserName();
-  const createLogAndDownload = async (name, MlName) => {
-    const timestamp = new Date().toLocaleString(); // Generate a timestamp
-    const message = `:: Downloaded ${MlName} ::`; // Include timestamp in message
+
+  const createLogAndDownload = async (name, mlName) => {
+    const timestamp = new Date().toLocaleString();
+    const message = `:: Downloaded ${mlName} ::`;
     const action = "Download";
     try {
-      // Create a log first
       await axios.post(`${base_url}/log/add`, {
         username: name,
         message: message,
@@ -32,11 +33,22 @@ const MachineLearning = () => {
       console.error("Error creating log:", error);
     }
   };
-      return (
-        <>
-          <div className="home">
-            <h1 className="reveal">Machine Learning</h1>
-            <div className="display-cards">
+
+  const handleDownloadClick = (mlName) => {
+    createLogAndDownload(username, mlName);
+    setShowPopCard(true);
+  };
+
+  const handleClosePopCard = () => {
+    setShowPopCard(false);
+  };
+
+  return (
+    <>
+      <div className="home">
+        <h1 className="reveal">Machine Learning</h1>
+        {showPopCard && <PopCard onClose={handleClosePopCard} />}
+        <div className="display-cards">
           {mlData.map((ml) => (
             <div key={ml.id} className="srs-card">
               <div className="srs-card-right">
@@ -45,14 +57,13 @@ const MachineLearning = () => {
               </div>
               <button
                 onClick={() => {
-                  createLogAndDownload(username,ml.ml_name);
+                  handleDownloadClick(ml.ml_name);
                   window.open(ml.location, "_blank", "noopener,noreferrer");
                 }}
                 className="btn2"
               >
                 Download
               </button>
-              {/* Dynamically load images from the assets folder */}
               {ml.imgUrl && (
                 <div className="srs-img">
                   <img
@@ -64,9 +75,9 @@ const MachineLearning = () => {
             </div>
           ))}
         </div>
-          </div>
-        </>
-      );
-}
+      </div>
+    </>
+  );
+};
 
-export default MachineLearning
+export default MachineLearning;
