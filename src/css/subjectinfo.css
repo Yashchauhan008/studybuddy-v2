@@ -34,7 +34,7 @@
     font-size: 60px;
     line-height: 60px;
     padding-left: 70px;
-    overflow: hidden; 
+    /* overflow: hidden;  */
     padding-bottom: 10px;
 }
 .sub-data p{
@@ -144,10 +144,11 @@
     .sub-data h1{
         /* position: absolute; */
         color: white;
-        background-color: #121212;
+        /* background-color: #121212; */
         /* border-radius:20px; */
         transform: translateY(-40px);
         top: 0;
+        /* height: auto; */
         padding: 0 0 20px 0;
         text-align: center;
         /* width: 80%; */
