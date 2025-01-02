@@ -55,15 +55,17 @@ const CyberSecurity = () => {
                 <h2>{cs.cs_name}</h2>
                 <p>{cs.description}</p>
               </div>
+              {cs.location ? <>
               <button
                 onClick={() => {
                   handleDownloadClick(cs.cs_name);
                   window.open(cs.location, "_blank", "noopener,noreferrer");
                 }}
                 className="btn2"
-              >
+                >
                 Download
               </button>
+                </> : null}
               {cs.imgUrl && (
                 <div className="srs-img">
                   <img

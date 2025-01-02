@@ -55,15 +55,19 @@ const Python = () => {
                 <h2>{py.py_name}</h2>
                 <p>{py.description}</p>
               </div>
-              <button
-                onClick={() => {
-                  handleDownloadClick(py.py_name);
-                  window.open(py.location, "_blank", "noopener,noreferrer");
-                }}
-                className="btn2"
-              >
-                Download
-              </button>
+              {py.location ? (
+                <>
+                  <button
+                    onClick={() => {
+                      handleDownloadClick(py.py_name);
+                      window.open(py.location, "_blank", "noopener,noreferrer");
+                    }}
+                    className="btn2"
+                  >
+                    Download
+                  </button>
+                </>
+              ) : null}
               {py.imgUrl && (
                 <div className="srs-img">
                   <img

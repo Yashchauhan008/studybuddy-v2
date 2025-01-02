@@ -55,15 +55,19 @@ const MachineLearning = () => {
                 <h2>{ml.ml_name}</h2>
                 <p>{ml.description}</p>
               </div>
-              <button
-                onClick={() => {
-                  handleDownloadClick(ml.ml_name);
-                  window.open(ml.location, "_blank", "noopener,noreferrer");
-                }}
-                className="btn2"
-              >
-                Download
-              </button>
+              {ml.location ? (
+                <>
+                  <button
+                    onClick={() => {
+                      handleDownloadClick(ml.ml_name);
+                      window.open(ml.location, "_blank", "noopener,noreferrer");
+                    }}
+                    className="btn2"
+                  >
+                    Download
+                  </button>
+                </>
+              ) : null}
               {ml.imgUrl && (
                 <div className="srs-img">
                   <img

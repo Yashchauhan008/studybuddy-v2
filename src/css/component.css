@@ -555,8 +555,15 @@
     width: 90%;
   }
 }
+.log-cards::-webkit-scrollbar{
+  display: none;
+  
+}
 .log-cards{
   z-index: 100;
+  /* background-color: pink; */
+  overflow-y: auto;
+  height: 70vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -760,7 +767,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: row;
+  flex-direction: row; 
   flex-wrap: nowrap;
   /* gap: 1rem; */
   font-weight: 700;
@@ -931,4 +938,8 @@
 .pop-card-exit {
   opacity: 0;
   transform: translateY(-50px);
+}
+.card__icon:hover{
+  transform: scale(0.9);
+  transition: 0.2s;
 }

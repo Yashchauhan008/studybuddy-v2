@@ -55,15 +55,19 @@ const ComputerNetworks = () => {
                 <h2>{cn.cn_name}</h2>
                 <p>{cn.description}</p>
               </div>
-              <button
-                onClick={() => {
-                  handleDownloadClick(cn.cn_name);
-                  window.open(cn.location, "_blank", "noopener,noreferrer");
-                }}
-                className="btn2"
-              >
-                Download
-              </button>
+              {cn.location ? (
+                <>
+                  <button
+                    onClick={() => {
+                      handleDownloadClick(cn.cn_name);
+                      window.open(cn.location, "_blank", "noopener,noreferrer");
+                    }}
+                    className="btn2"
+                  >
+                    Download
+                  </button>
+                </>
+              ) : null}
               {cn.imgUrl && (
                 <div className="srs-img">
                   <img
