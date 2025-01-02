@@ -465,7 +465,7 @@
   fill: #fff; 
 } */
 /* Updated Button Styles */
-.subjectinfo .backbtn {
+.backbtn {
   margin-left: 20px;
   display: flex;
   align-items: center;
@@ -473,7 +473,6 @@
   z-index: 1000;
   border-radius: 50%;
   position: absolute;
-  top: -38vh;
   left: 0vw;
   width: 45px;
   height: 45px;

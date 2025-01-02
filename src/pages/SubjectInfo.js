@@ -122,8 +122,8 @@ const SubjectInfo = () => {
 
   return (
     <>
-      <div className="subjectinfo">
         <BackButton path={`/auth/subjects`} />
+      <div className="subjectinfo">
         <div className="sub-data">
           {isEditing ? (
             <>
