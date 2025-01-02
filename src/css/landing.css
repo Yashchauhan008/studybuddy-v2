@@ -271,3 +271,31 @@
     background: #fff;
   }
   
+  .shuffle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: 450px;
+    gap: 0.25rem;
+  }
+  
+  .square {
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensures the image covers the entire square */
+    background-position: center; /* Centers the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden; /* Ensures no content overflows the square boundaries */
+  }
+  
+  .square img {
+    width: 100%; /* Ensures the image fills the square */
+    height: 100%; /* Ensures the image fills the square */
+    object-fit: cover; /* Crops the image while maintaining aspect ratio */
+    object-position: center; /* Centers the image in the square */
+    border-radius: 10px;
+  }
+  
