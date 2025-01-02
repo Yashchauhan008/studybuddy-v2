@@ -92,6 +92,7 @@ const DisplayLogs = () => {
           <option value="Login">Login</option>
           <option value="Logout">Logout</option>
           <option value="Explore">Explore</option>
+          <option value="Visit">Explore</option>
         </select>
       </div>
 

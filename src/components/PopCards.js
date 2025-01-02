@@ -4,13 +4,34 @@ import user from "../assets/yash.jpg";
 import insta from "../assets/insta.png";
 import github from "../assets/github.png";
 import linkdn from "../assets/linkedin.png";
+import axios from "axios";
+import { getUserName } from "../utils/helpers";
 
 const PopCard = ({ onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const base_url = process.env.REACT_APP_BASE_URL;
+
+  const createLogVisit = async (name, obj) => {
+    const timestamp = new Date().toLocaleString();
+    const message = `:: visited ${obj} ::`;
+    const action = "Visit";
+    try {
+      await axios.post(`${base_url}/log/add`, {
+        username: name,
+        message: message,
+        action: action,
+      });
+      console.log("log added");
+    } catch (error) {
+      console.error("Error creating log:", error);
+    }
+  };
 
   const handleNavigate = (url) => {
     window.open(url, "_blank");
   };
+
+  const username = getUserName();
 
   // Animation for appearance
   useEffect(() => {
@@ -26,32 +47,41 @@ const PopCard = ({ onClose }) => {
   };
 
   return (
-    <div className={`pop-card ${isVisible ? "pop-card-enter" : "pop-card-exit"}`}>
+    <div
+      className={`pop-card ${isVisible ? "pop-card-enter" : "pop-card-exit"}`}
+    >
       <article className="card">
         <section className="card__hero">
           <header className="card__hero-header">
             <div className="social-buttons">
               <button
                 className="pop-cosial"
-                onClick={() =>
-                  handleNavigate("https://www.instagram.com/yash_chauhan________")
-                }
+                onClick={() => {
+                  createLogVisit(username, "instagram");
+                  handleNavigate(
+                    "https://www.instagram.com/yash_chauhan________"
+                  );
+                }}
               >
                 <img src={insta} alt="Instagram" className="bell" />
               </button>
               <button
                 className="pop-cosial"
-                onClick={() =>
+                onClick={() => {
+                  createLogVisit(username, "linkedin");
                   handleNavigate(
                     "https://www.linkedin.com/in/yash-chauhan-842162321?"
-                  )
-                }
+                  );
+                }}
               >
                 <img src={linkdn} alt="LinkedIn" className="bell" />
               </button>
               <button
                 className="pop-cosial"
-                onClick={() => handleNavigate("https://github.com/Yashchauhan008")}
+                onClick={() => {
+                  createLogVisit(username, "github");
+                  handleNavigate("https://github.com/Yashchauhan008");
+                }}
               >
                 <img src={github} alt="GitHub" className="bell" />
               </button>
@@ -81,7 +111,10 @@ const PopCard = ({ onClose }) => {
           <div className="card__job-summary">
             <div
               className="card__job-icon"
-              onClick={() => handleNavigate("https://insigh.to/b/quick-labs")}
+              onClick={() => {
+                createLogVisit(username, "portfolio");
+                handleNavigate("https://yash-chauhan.vercel.app");
+              }}
             >
               <img className="card__job-image" src={user} alt="Profile" />
             </div>
@@ -95,7 +128,10 @@ const PopCard = ({ onClose }) => {
 
           <button
             className="card__btn"
-            onClick={() => handleNavigate("https://insigh.to/b/quick-labs")}
+            onClick={() => {
+              createLogVisit(username, "linkedin");
+              handleNavigate("https://insigh.to/b/quick-labs");
+            }}
           >
             feedback
           </button>

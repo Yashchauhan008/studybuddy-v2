@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../css/component.css";
 import logo from "../assets/logo.png";
-import { ToastContainer, toast, Bounce } from "react-toastify";
+import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 import { useNavigate } from "react-router-dom";
 import gsap from "gsap";
 
-// import image1 from "../assets/c++.png";
-// import image2 from "../assets/c.png";
-// import image3 from "../assets/dart.png";
-// import image4 from "../assets/flutter.png";
-import base from "../assets/sb.jpeg";
+import base from "../assets/QuickLabs.png";
 import cs from "../assets/cs.jpeg";
 import cn from "../assets/cn.jpeg";
 import py from "../assets/py.jpeg";
@@ -21,26 +17,32 @@ import srs from "../assets/srs.jpeg";
 import ml from "../assets/ml.jpeg";
 
 const Navbar = () => {
-  const { user, logout } = useKindeAuth();
+  const { user } = useKindeAuth();
   const [menuTGL, setMenuTGL] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredImage, setHoveredImage] = useState(base);
   const [isImageChanging, setIsImageChanging] = useState(false); // Animation state
+  const [isAnimating, setIsAnimating] = useState(false); // Prevent double click during animation
   const navigate = useNavigate();
   const isAdmin = sessionStorage.getItem("isAdmin") === "true";
 
-  function menuToggle() {
+  const menuToggle = () => {
+    if (isAnimating) return;
+
+    setIsAnimating(true);
     if (!menuTGL) {
       setIsVisible(true);
       setMenuTGL(true);
     } else {
       setMenuTGL(false);
     }
-  }
+  };
 
   useEffect(() => {
     if (menuTGL) {
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        onComplete: () => setIsAnimating(false), // Allow further clicks after animation
+      });
       tl.fromTo(
         ".menu-cnt",
         { y: "100%", opacity: 0 },
@@ -60,7 +62,10 @@ const Navbar = () => {
       );
     } else if (!menuTGL && isVisible) {
       const tl = gsap.timeline({
-        onComplete: () => setIsVisible(false),
+        onComplete: () => {
+          setIsAnimating(false); // Allow further clicks after animation
+          setIsVisible(false);
+        },
       });
       tl.to(".menu-item", {
         y: "50px",
@@ -114,26 +119,19 @@ const Navbar = () => {
                 logs
               </button>
             )}
-            <button className="btn2" onClick={() => menuToggle()}>
-              menu
+            <button className="btn2" onClick={menuToggle} style={{width:"70px"}}>
+              {menuTGL ? "x" : "menu"}
             </button>
             {isVisible && (
               <div className="menu-cnt">
                 <div className="menu-cnt-top">your resources</div>
                 <div className="menu-cnt-left">
-                  {/* <button
-                    className="menu-item"
-                    onMouseEnter={() => handleHover(base)}
-                    onClick={()=>{navigate("/auth/home");setMenuTGL(!menuTGL)}}
-                  >
-                    <span>home</span>
-                  </button> */}
                   <button
                     className="menu-item"
                     onMouseEnter={() => handleHover(base)}
                     onClick={() => {
                       navigate("/auth/subjects");
-                      setMenuTGL(!menuTGL);
+                      setMenuTGL(false);
                     }}
                   >
                     <span>subjects</span>
@@ -143,7 +141,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleHover(srs)}
                     onClick={() => {
                       navigate("/auth/srs");
-                      setMenuTGL(!menuTGL);
+                      setMenuTGL(false);
                     }}
                   >
                     <span>SRS</span>
@@ -153,7 +151,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleHover(cs)}
                     onClick={() => {
                       navigate("/auth/cyber-Security");
-                      setMenuTGL(!menuTGL);
+                      setMenuTGL(false);
                     }}
                   >
                     <span>cyber security</span>
@@ -163,7 +161,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleHover(ml)}
                     onClick={() => {
                       navigate("/auth/machine-learning");
-                      setMenuTGL(!menuTGL);
+                      setMenuTGL(false);
                     }}
                   >
                     <span>machine learning</span>
@@ -173,7 +171,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleHover(py)}
                     onClick={() => {
                       navigate("/auth/python");
-                      setMenuTGL(!menuTGL);
+                      setMenuTGL(false);
                     }}
                   >
                     <span>python</span>
@@ -183,7 +181,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleHover(cn)}
                     onClick={() => {
                       navigate("/auth/computer-networks");
-                      setMenuTGL(!menuTGL);
+                      setMenuTGL(false);
                     }}
                   >
                     <span>computer networks</span>
@@ -193,7 +191,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleHover(dm)}
                     onClick={() => {
                       navigate("/auth/data-mining");
-                      setMenuTGL(!menuTGL);
+                      setMenuTGL(false);
                     }}
                   >
                     <span>data mining</span>
@@ -203,7 +201,7 @@ const Navbar = () => {
                     onMouseEnter={() => handleHover(mern)}
                     onClick={() => {
                       navigate("/auth/mern-projects");
-                      setMenuTGL(!menuTGL);
+                      setMenuTGL(false);
                     }}
                   >
                     <span>mern projects</span>
