@@ -99,6 +99,7 @@ const Srs = () => {
               )}
             </div>
           ))}
+          <div className="home-block"></div>
         </div>
       </div>
     </>

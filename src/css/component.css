@@ -943,3 +943,9 @@
   transform: scale(0.9);
   transition: 0.2s;
 }
+
+.home-block{
+  /* background-color: red; */
+  width: 100%;
+  height: 100px;
+}

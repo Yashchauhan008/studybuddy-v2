@@ -78,6 +78,7 @@ const ComputerNetworks = () => {
               )}
             </div>
           ))}
+          <div className="home-block"></div>
         </div>
       </div>
     </>

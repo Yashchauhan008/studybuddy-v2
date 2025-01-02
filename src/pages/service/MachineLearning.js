@@ -78,6 +78,7 @@ const MachineLearning = () => {
               )}
             </div>
           ))}
+          <div className="home-block"></div>
         </div>
       </div>
     </>

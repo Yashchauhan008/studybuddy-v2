@@ -133,6 +133,7 @@ const SubjectsComponent = () => {
               <div className="circle">77</div>
             </div>
           ))}
+          <div className='home-block'></div>
         </div>
       </div>
 
