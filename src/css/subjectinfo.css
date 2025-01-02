@@ -176,7 +176,7 @@
     }
     .sub-data h2{
         position: absolute;
-        bottom: 30px;
+        bottom: 50px;
         text-align: center;
         padding: 0 10px;
         background-color: #A2F7FF;
@@ -186,6 +186,7 @@
         text-transform: capitalize;
     }
     .startprep{
+        position: absolute;
         box-sizing: border-box;
         bottom: 30px;
         width: 80%;
