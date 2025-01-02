@@ -7,8 +7,12 @@ import { getUserName } from "../utils/helpers";
 
 const Profile = () => {
   const { user, logout } = useKindeAuth();
-  const username = getUserName()
+  const username = getUserName();
   const base_url = process.env.REACT_APP_BASE_URL;
+
+  const handleNavigate = (url) => {
+    window.open(url, "_blank");
+  };
 
   if (!user) {
     return <Loader />;
@@ -17,7 +21,7 @@ const Profile = () => {
   const createLogForLogout = async (name) => {
     const timestamp = new Date().toLocaleString(); // Generate a timestamp
     const message = `:: Logout ::`; // Include timestamp in message
-    const action = "Logout"
+    const action = "Logout";
     try {
       // Create a log first
       await axios.post(`${base_url}/log/add`, {
@@ -25,7 +29,7 @@ const Profile = () => {
         message: message,
         action: action,
       });
-      console.log("log added")
+      console.log("log added");
     } catch (error) {
       console.error("Error creating log:", error);
     }
@@ -42,15 +46,21 @@ const Profile = () => {
           <p>{user.email}</p>
         </div>
       </div>
-      <div style={{ textAlign: "center" }}>
+      <div className="profile-btn">
         <button
           className="btn2"
-          onClick={() =>{
-            createLogForLogout(username)
-            logout({ redirectUri: "https://studybuddy-v2.vercel.app" })}
-          } 
+          onClick={() => {
+            createLogForLogout(username);
+            logout({ redirectUri: "https://studybuddy-v2.vercel.app" });
+          }}
         >
           log out
+        </button>
+        <button
+          className="btn2"
+          onClick={() => handleNavigate("https://insigh.to/b/quick-labs")}
+        >
+          Feedback
         </button>
       </div>
     </>
