@@ -108,7 +108,7 @@ const ShuffleHero = () => {
       </nav>
       <section className="shuffle-hero">
         <div className="text-content">
-          <span className="subheading reveal">hey buddy</span>
+          {/* <span className="subheading reveal">hey buddy</span> */}
           <h3 className="heading">
             From <span className="Confusion">Confusion</span>
             <br /> to <span className="Clarity">Clarity</span>
